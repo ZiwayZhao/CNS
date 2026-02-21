@@ -1,0 +1,608 @@
+commit 02deae8395ed934f70d118f33d63cba02767dfa5
+Author: Lorenz Lehle <lorenz.lehle@tum.de>
+Date:   Tue Feb 10 16:20:56 2026 +0100
+
+    fix item alignment in q4
+
+ old_exams/quiz4_2025-solution.pdf | Bin 122777 -> 122749 bytes
+ old_exams/quiz4_2025.pdf          | Bin 121913 -> 121889 bytes
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 8e776b02004e71943c432900f8fe1acba4c211f6
+Author: Lorenz Lehle <lorenz.lehle@tum.de>
+Date:   Fri Feb 6 17:35:12 2026 +0100
+
+    add quiz4
+
+ old_exams/quiz4_2025-solution.pdf | Bin 0 -> 122777 bytes
+ old_exams/quiz4_2025.pdf          | Bin 0 -> 121913 bytes
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 83425bfc3639351a513f2cad74e61d633aa45ef7
+Author: Lorenz Lehle <lorenz.lehle@tum.de>
+Date:   Fri Feb 6 17:35:05 2026 +0100
+
+    publish t13 solution
+
+ tutorial13-solution.pdf | Bin 0 -> 105082 bytes
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 6b1cee9046aea916f2f041f41d24e91eb307872f
+Author: Lorenz Lehle <lorenz.lehle@tum.de>
+Date:   Fri Jan 30 19:06:28 2026 +0100
+
+    publish tutorial13
+
+ tutorial12-solution.pdf | Bin 0 -> 162322 bytes
+ tutorial12.pdf          | Bin 148208 -> 148708 bytes
+ tutorial13.pdf          | Bin 0 -> 97052 bytes
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit c4455d6c056becee0d0da621bc577062686f0afd
+Author: Lorenz Lehle <lorenz.lehle@tum.de>
+Date:   Wed Jan 28 11:37:20 2026 +0100
+
+    Update chapS
+
+ slides_chapS.pdf | Bin 1982644 -> 1813781 bytes
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit ecc9bb575165a204cd888a47d3fd8bdbf763be9c
+Author: Lorenz Lehle <lorenz.lehle@tum.de>
+Date:   Fri Jan 23 15:49:37 2026 +0100
+
+    publish tutorial12, add tutorial11 solution
+
+ tutorial11-solution.pdf | Bin 0 -> 91881 bytes
+ tutorial12.pdf          | Bin 0 -> 148208 bytes
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit b02cae1325a95706d24d654f1a5491492d354c34
+Author: Lorenz Lehle <lorenz.lehle@tum.de>
+Date:   Wed Jan 21 13:52:57 2026 +0100
+
+    update chap5, add chapS
+
+ slides_chap5.pdf | Bin 1243074 -> 1251259 bytes
+ slides_chapS.pdf | Bin 0 -> 1982644 bytes
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit a031d7a4a4b3c56f5d295c1e8f97356d44de5aa6
+Author: Lorenz Lehle <lorenz.lehle@tum.de>
+Date:   Fri Jan 16 17:35:35 2026 +0100
+
+    add quiz3 2025
+
+ old_exams/quiz3_2025-solution.pdf | Bin 0 -> 114654 bytes
+ old_exams/quiz3_2025.pdf          | Bin 0 -> 113709 bytes
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit af558a9a1bb4a809804953c9856abc61dd75ceb2
+Author: Lorenz Lehle <lorenz.lehle@tum.de>
+Date:   Thu Jan 15 14:16:08 2026 +0100
+
+    publish tutorial11, add tutorial10 solution
+
+ tutorial10-solution.pdf | Bin 0 -> 109255 bytes
+ tutorial11.pdf          | Bin 0 -> 69004 bytes
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 5bff0446dbfb884823cf34c6e3b97a6bb87104df
+Author: Lorenz Lehle <lorenz.lehle@tum.de>
+Date:   Thu Jan 15 14:15:53 2026 +0100
+
+    update slides5
+
+ slides_chap5.pdf | Bin 1243085 -> 1243074 bytes
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 7ac691e0465013f115414a3619c180fde2d47576
+Author: Lorenz Lehle <lorenz.lehle@tum.de>
+Date:   Wed Jan 14 11:39:49 2026 +0100
+
+    publish chap5
+
+ slides_chap5.pdf | Bin 0 -> 1243085 bytes
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 26e440479f2b1d66ac8cafcb2194f43097151616
+Author: Lorenz Lehle <lorenz.lehle@tum.de>
+Date:   Fri Jan 9 14:27:07 2026 +0100
+
+    add tutorial10, tutorial09 solution
+
+ tutorial09-solution.pdf | Bin 0 -> 86787 bytes
+ tutorial09.pdf          | Bin 73356 -> 74416 bytes
+ tutorial10.pdf          | Bin 0 -> 93978 bytes
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 9fedbdf249ea1696031736ec79f8abcdcb4181cb
+Author: Lorenz Lehle <lorenz.lehle@tum.de>
+Date:   Fri Dec 19 21:18:11 2025 +0100
+
+    publish 08 solution, add 09
+
+ tutorial08-solution.pdf | Bin 0 -> 117608 bytes
+ tutorial09.pdf          | Bin 0 -> 73356 bytes
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 06bd1d2064cbc5f2da04b2b1a8756c12c2a134f2
+Author: Lorenz Lehle <lorenz.lehle@tum.de>
+Date:   Wed Dec 17 20:52:42 2025 +0100
+
+    publish quiz2
+
+ old_exams/quiz2_2025-solution.pdf | Bin 0 -> 138122 bytes
+ old_exams/quiz2_2025.pdf          | Bin 0 -> 134773 bytes
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 935b289de6cc19841e2e52be5750156b3405a087
+Author: Lorenz Lehle <lorenz.lehle@tum.de>
+Date:   Wed Dec 17 20:45:58 2025 +0100
+
+    slide update chap3+4
+
+ slides_chap3.pdf | Bin 22186059 -> 22186051 bytes
+ slides_chap4.pdf | Bin 1088362 -> 1088243 bytes
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 379cfc8f3fe3f5636d46982e524c8c4e2a246e92
+Author: Lorenz Lehle <lorenz.lehle@tum.de>
+Date:   Wed Dec 17 09:45:50 2025 +0100
+
+    update chap4
+
+ slides_chap4.pdf | Bin 1088438 -> 1088362 bytes
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit a86441b880e56616db6da55bd9cb64b5116710a1
+Author: Lorenz Lehle <lorenz.lehle@tum.de>
+Date:   Sat Dec 13 13:28:02 2025 +0100
+
+    add 07 solution, publish 08
+
+ tutorial07-solution.pdf | Bin 0 -> 112364 bytes
+ tutorial08.pdf          | Bin 0 -> 111037 bytes
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit f5f492d05f0233f212adfedc017021c2d3d7d30f
+Author: Lorenz Lehle <lorenz.lehle@tum.de>
+Date:   Wed Dec 10 11:36:08 2025 +0100
+
+    update chap3, publish chap4
+
+ slides_chap3.pdf | Bin 22186037 -> 22186059 bytes
+ slides_chap4.pdf | Bin 0 -> 1088438 bytes
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit a6adea6d684880ddf29c7d3a17c1e8d14e794f1c
+Author: Lorenz Lehle <lorenz.lehle@tum.de>
+Date:   Fri Dec 5 17:25:19 2025 +0100
+
+    add t06 solution, publish t07
+
+ tutorial06-solution.pdf | Bin 0 -> 198898 bytes
+ tutorial07.pdf          | Bin 0 -> 95442 bytes
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 24c2b7a35efbf06962e029156c938cc18080014e
+Author: Lorenz Lehle <lorenz.lehle@tum.de>
+Date:   Wed Dec 3 14:04:14 2025 +0100
+
+    update slides_chap3
+
+ slides_chap3.pdf | Bin 22183096 -> 22186037 bytes
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 7d31807ab66035800b4a71333052960939469fb8
+Author: Lorenz Lehle <lorenz.lehle@tum.de>
+Date:   Wed Dec 3 02:08:42 2025 +0100
+
+    publish quiz1
+
+ old_exams/quiz1_2025-solution.pdf | Bin 0 -> 145798 bytes
+ old_exams/quiz1_2025.pdf          | Bin 0 -> 143330 bytes
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit d3c83413de6e768bc02417a7a4cbbc899534515f
+Author: Lorenz Lehle <lorenz.lehle@tum.de>
+Date:   Mon Dec 1 03:45:32 2025 +0100
+
+    Add tutorial05 solution, publish tutorial06
+
+ tutorial05-solution.pdf | Bin 0 -> 101928 bytes
+ tutorial06.pdf          | Bin 0 -> 175957 bytes
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 2741e9e354c2f6fb0dad0ba989e7b028b60d1cc3
+Author: Lorenz Lehle <lorenz.lehle@tum.de>
+Date:   Fri Nov 21 17:18:25 2025 +0100
+
+    boxless tutorial05
+
+ tutorial05.pdf | Bin 78784 -> 76849 bytes
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit d053f46789f0106c5e2a82ec4ef90482f7fd3808
+Author: Lorenz Lehle <lorenz.lehle@tum.de>
+Date:   Fri Nov 21 16:35:55 2025 +0100
+
+    add 04 solution and publish t05
+
+ tutorial04-solution.pdf | Bin 0 -> 111215 bytes
+ tutorial05.pdf          | Bin 0 -> 78784 bytes
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit b2f6c528e7d379bd6a08b0d0246286f7fa511d8c
+Author: Lorenz Lehle <lorenz.lehle@tum.de>
+Date:   Wed Nov 19 12:17:53 2025 +0100
+
+    update slides2, add slides3
+
+ slides_chap2.pdf | Bin 1226013 -> 1226005 bytes
+ slides_chap3.pdf | Bin 0 -> 22183096 bytes
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 3046cf9f7431e3e9e9628723edf12cdf4e5a80eb
+Author: Lorenz Lehle <lorenz.lehle@tum.de>
+Date:   Sun Nov 16 23:57:51 2025 +0100
+
+    publish tutorial04, add tutorial03 solution
+
+ tutorial03-solution.pdf | Bin 0 -> 99127 bytes
+ tutorial04.pdf          | Bin 0 -> 92695 bytes
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit f8b0c13674f95dc28c6c215c8aa813121d40e790
+Author: Lorenz Lehle <lorenz.lehle@tum.de>
+Date:   Wed Nov 12 13:31:11 2025 +0100
+
+    update slides chap2
+
+ slides_chap2.pdf | Bin 1225948 -> 1226013 bytes
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 8bea5a3f22988cc0a612a3fdf0505e023b0f75c6
+Author: Lorenz Lehle <lorenz.lehle@tum.de>
+Date:   Sun Nov 9 16:41:41 2025 +0100
+
+    update tutorials, publish cheatsheet
+
+ cheatsheet.pdf          | Bin 0 -> 320537 bytes
+ tutorial02-solution.pdf | Bin 157534 -> 157546 bytes
+ tutorial02.pdf          | Bin 95321 -> 95701 bytes
+ tutorial03.pdf          | Bin 72377 -> 72364 bytes
+ 4 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 85eeba1bdc0f87b90d5d54f680ac02ac312ea3cc
+Author: Lorenz Lehle <lorenz.lehle@tum.de>
+Date:   Fri Nov 7 16:19:22 2025 +0100
+
+    update chap0 bonus, publish t02 sol, t03
+
+ slides_chap0.pdf        | Bin 8393892 -> 8396443 bytes
+ tutorial02-solution.pdf | Bin 0 -> 157534 bytes
+ tutorial03.pdf          | Bin 0 -> 72377 bytes
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 86ff0c6d07445ad6147940cbd17eb6e0f97d5d9f
+Author: Lorenz Lehle <lorenz.lehle@tum.de>
+Date:   Wed Nov 5 13:11:40 2025 +0100
+
+    update chap1
+
+ slides_chap1.pdf | Bin 1879137 -> 1879131 bytes
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit d1cc45e1925882c0c9d39e762db87ca1b4dec71b
+Author: Lorenz Lehle <lorenz.lehle@tum.de>
+Date:   Wed Nov 5 10:33:39 2025 +0100
+
+    slides update chap1; add chap2
+
+ slides_chap1.pdf | Bin 1875524 -> 1879137 bytes
+ slides_chap2.pdf | Bin 0 -> 1225948 bytes
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 2c3370bfa7235651df93b73abe679821486a2d7e
+Author: Lorenz Lehle <lorenz.lehle@tum.de>
+Date:   Mon Nov 3 02:54:43 2025 +0100
+
+    update tutor group information: moved group 6
+
+ tutorial-groups.txt | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+commit dc085e6904f4cb431a40c88fe0018c21a3db4b0b
+Author: Lorenz Lehle <lorenz.lehle@tum.de>
+Date:   Mon Nov 3 02:53:23 2025 +0100
+
+    publish tutorial01-solution and tutorial02
+
+ tutorial01-solution.pdf | Bin 0 -> 80723 bytes
+ tutorial02.pdf          | Bin 0 -> 95321 bytes
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit df1b2fb58d61239c5caae5f4dca49314c2d25b6b
+Author: Lorenz Lehle <lorenz.lehle@tum.de>
+Date:   Fri Oct 24 12:53:42 2025 +0200
+
+    add tutorial groups list
+
+ tutorial-groups.txt | 25 +++++++++++++++++++++++++
+ 1 file changed, 25 insertions(+)
+
+commit 79bfeff32ec1ffaccb7ae796b353c5069291c95e
+Author: Lorenz Lehle <lorenz.lehle@tum.de>
+Date:   Fri Oct 24 11:44:01 2025 +0200
+
+    update tutorial01
+
+ tutorial01.pdf | Bin 51809 -> 51775 bytes
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 96879111b9db96798770bb6a0028ae43dfd5bc13
+Author: Georg Carle <carle@net.in.tum.de>
+Date:   Thu Oct 23 00:00:49 2025 +0200
+
+    small update
+
+ slides_chap1.pdf | Bin 1875553 -> 1875524 bytes
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 4cdb56137455d0f84bdc2ac899b639f988285853
+Author: Georg Carle <carle@net.in.tum.de>
+Date:   Wed Oct 22 13:24:52 2025 +0200
+
+    small updates
+
+ slides_chap1.pdf | Bin 1875633 -> 1875553 bytes
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit bb9b8e18945d660ba452374e99fd574fd37ef60e
+Author: Georg Carle <carle@net.in.tum.de>
+Date:   Wed Oct 22 12:00:12 2025 +0200
+
+    small updates
+
+ slides_chap1.pdf | Bin 1875381 -> 1875633 bytes
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 49c4eee8813c6f2277b930cf43377b88a070a5f8
+Author: Lorenz Lehle <lorenz.lehle@tum.de>
+Date:   Wed Oct 22 11:53:58 2025 +0200
+
+    update slides0 and tutorial01
+
+ slides_chap0.pdf | Bin 8395853 -> 8393892 bytes
+ tutorial01.pdf   | Bin 38419 -> 51809 bytes
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 73156b473ff1c96acf1ded19d431e166670d35f4
+Author: Georg Carle <carle@net.in.tum.de>
+Date:   Wed Oct 22 10:47:21 2025 +0200
+
+    small updates
+
+ slides_chap1.pdf        | Bin 1880072 -> 1875381 bytes
+ tutorial01-solution.pdf | Bin 54231 -> 0 bytes
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit da822b992f23e30559c314e024b01d9c50343983
+Author: Georg Carle <carle@net.in.tum.de>
+Date:   Wed Oct 22 00:35:41 2025 +0200
+
+    small updates
+
+ slides_chap0.pdf | Bin 7978667 -> 8395853 bytes
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 0ef2bf55735e0001d00d4fde98ea162cc3dda583
+Author: Stephan Guenther <guenther@tum.de>
+Date:   Thu Oct 16 16:27:37 2025 +0200
+
+    tuorial01
+
+ tutorial01-solution.pdf | Bin 0 -> 54231 bytes
+ tutorial01.pdf          | Bin 0 -> 38419 bytes
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 721bc2a1794564d3f79f3b379a2d1370a4eda7f1
+Author: Stephan Guenther <guenther@tum.de>
+Date:   Wed Oct 15 07:38:10 2025 +0200
+
+    update old exams
+
+ old_exams-grnvs/endterm_2023-solution.pdf | Bin 0 -> 322459 bytes
+ old_exams-grnvs/endterm_2023.pdf          | Bin 0 -> 259645 bytes
+ old_exams-grnvs/endterm_2024-solution.pdf | Bin 0 -> 331641 bytes
+ old_exams-grnvs/endterm_2024.pdf          | Bin 0 -> 304503 bytes
+ old_exams-grnvs/endterm_2025-solution.pdf | Bin 0 -> 330399 bytes
+ old_exams-grnvs/endterm_2025.pdf          | Bin 0 -> 318756 bytes
+ old_exams-grnvs/quiz1_2024-solution.pdf   | Bin 0 -> 114019 bytes
+ old_exams-grnvs/quiz1_2024.pdf            | Bin 0 -> 111777 bytes
+ old_exams-grnvs/quiz1_2025-solution.pdf   | Bin 0 -> 435849 bytes
+ old_exams-grnvs/quiz1_2025.pdf            | Bin 0 -> 144703 bytes
+ old_exams-grnvs/quiz2_2024-solution.pdf   | Bin 0 -> 110903 bytes
+ old_exams-grnvs/quiz2_2024.pdf            | Bin 0 -> 101082 bytes
+ old_exams-grnvs/quiz2_2025-solution.pdf   | Bin 0 -> 115047 bytes
+ old_exams-grnvs/quiz2_2025.pdf            | Bin 0 -> 108287 bytes
+ old_exams-grnvs/quiz3_2024-solution.pdf   | Bin 0 -> 137158 bytes
+ old_exams-grnvs/quiz3_2024.pdf            | Bin 0 -> 133212 bytes
+ old_exams-grnvs/quiz3_2025-solution.pdf   | Bin 0 -> 96513 bytes
+ old_exams-grnvs/quiz3_2025.pdf            | Bin 0 -> 94489 bytes
+ old_exams-grnvs/quiz4_2024-solution.pdf   | Bin 0 -> 97735 bytes
+ old_exams-grnvs/quiz4_2024.pdf            | Bin 0 -> 96804 bytes
+ old_exams-grnvs/quiz4_2025-solution.pdf   | Bin 0 -> 91011 bytes
+ old_exams-grnvs/quiz4_2025.pdf            | Bin 0 -> 90237 bytes
+ old_exams-grnvs/quiz5_2024-solution.pdf   | Bin 0 -> 78619 bytes
+ old_exams-grnvs/retake_2023-solution.pdf  | Bin 0 -> 236672 bytes
+ old_exams-grnvs/retake_2023.pdf           | Bin 0 -> 222515 bytes
+ old_exams-grnvs/retake_2024-solution.pdf  | Bin 0 -> 381700 bytes
+ old_exams-grnvs/retake_2024.pdf           | Bin 0 -> 306042 bytes
+ 27 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 517bd5897b2e95126434721a486cfe7da68566ff
+Author: Stephan Guenther <guenther@tum.de>
+Date:   Wed Oct 15 07:35:31 2025 +0200
+
+    old exams
+
+ old_exams-grnvs/cheatsheet_2013.pdf       | Bin 0 -> 150563 bytes
+ old_exams-grnvs/cheatsheet_2015.pdf       | Bin 0 -> 453760 bytes
+ old_exams-grnvs/cheatsheet_2016.pdf       | Bin 0 -> 269140 bytes
+ old_exams-grnvs/cheatsheet_2017.pdf       | Bin 0 -> 323394 bytes
+ old_exams-grnvs/cheatsheet_2018.pdf       | Bin 0 -> 467358 bytes
+ old_exams-grnvs/cheatsheet_2019.pdf       | Bin 0 -> 467375 bytes
+ old_exams-grnvs/cheatsheet_2020.pdf       | Bin 0 -> 467375 bytes
+ old_exams-grnvs/cheatsheet_2021.pdf       | Bin 0 -> 258759 bytes
+ old_exams-grnvs/cheatsheet_2022.pdf       | Bin 0 -> 258776 bytes
+ old_exams-grnvs/endterm_2011-solution.pdf | Bin 0 -> 1055561 bytes
+ old_exams-grnvs/endterm_2011.pdf          | Bin 0 -> 1320535 bytes
+ old_exams-grnvs/endterm_2012-solution.pdf | Bin 0 -> 534744 bytes
+ old_exams-grnvs/endterm_2012.pdf          | Bin 0 -> 488479 bytes
+ old_exams-grnvs/endterm_2013-solution.pdf | Bin 0 -> 601132 bytes
+ old_exams-grnvs/endterm_2013.pdf          | Bin 0 -> 557369 bytes
+ old_exams-grnvs/endterm_2014-solution.pdf | Bin 0 -> 553058 bytes
+ old_exams-grnvs/endterm_2014.pdf          | Bin 0 -> 508337 bytes
+ old_exams-grnvs/endterm_2015-solution.pdf | Bin 0 -> 341595 bytes
+ old_exams-grnvs/endterm_2015.pdf          | Bin 0 -> 276819 bytes
+ old_exams-grnvs/endterm_2016-solution.pdf | Bin 0 -> 234860 bytes
+ old_exams-grnvs/endterm_2016.pdf          | Bin 0 -> 211490 bytes
+ old_exams-grnvs/endterm_2017-solution.pdf | Bin 0 -> 218570 bytes
+ old_exams-grnvs/endterm_2017.pdf          | Bin 0 -> 172475 bytes
+ old_exams-grnvs/endterm_2018-solution.pdf | Bin 0 -> 314693 bytes
+ old_exams-grnvs/endterm_2018.pdf          | Bin 0 -> 296786 bytes
+ old_exams-grnvs/endterm_2019-solution.pdf | Bin 0 -> 539471 bytes
+ old_exams-grnvs/endterm_2019.pdf          | Bin 0 -> 242667 bytes
+ old_exams-grnvs/endterm_2020-solution.pdf | Bin 0 -> 314533 bytes
+ old_exams-grnvs/endterm_2020.pdf          | Bin 0 -> 303197 bytes
+ old_exams-grnvs/endterm_2021-solution.pdf | Bin 0 -> 259337 bytes
+ old_exams-grnvs/endterm_2021.pdf          | Bin 0 -> 223962 bytes
+ old_exams-grnvs/endterm_2022-solution.pdf | Bin 0 -> 226003 bytes
+ old_exams-grnvs/endterm_2022.pdf          | Bin 0 -> 213717 bytes
+ old_exams-grnvs/midterm_2011-solution.pdf | Bin 0 -> 191596 bytes
+ old_exams-grnvs/midterm_2011.pdf          | Bin 0 -> 173764 bytes
+ old_exams-grnvs/midterm_2012-solution.pdf | Bin 0 -> 506843 bytes
+ old_exams-grnvs/midterm_2012.pdf          | Bin 0 -> 460857 bytes
+ old_exams-grnvs/midterm_2013-solution.pdf | Bin 0 -> 1016470 bytes
+ old_exams-grnvs/midterm_2013.pdf          | Bin 0 -> 1110312 bytes
+ old_exams-grnvs/midterm_2014-solution.pdf | Bin 0 -> 426091 bytes
+ old_exams-grnvs/midterm_2014.pdf          | Bin 0 -> 347252 bytes
+ old_exams-grnvs/midterm_2015-solution.pdf | Bin 0 -> 171535 bytes
+ old_exams-grnvs/midterm_2015.pdf          | Bin 0 -> 137501 bytes
+ old_exams-grnvs/midterm_2016-solution.pdf | Bin 0 -> 91956 bytes
+ old_exams-grnvs/midterm_2016.pdf          | Bin 0 -> 77809 bytes
+ old_exams-grnvs/midterm_2017-solution.pdf | Bin 0 -> 122422 bytes
+ old_exams-grnvs/midterm_2017.pdf          | Bin 0 -> 114228 bytes
+ old_exams-grnvs/midterm_2018-solution.pdf | Bin 0 -> 114951 bytes
+ old_exams-grnvs/midterm_2018.pdf          | Bin 0 -> 94550 bytes
+ old_exams-grnvs/midterm_2019-solution.pdf | Bin 0 -> 157631 bytes
+ old_exams-grnvs/midterm_2019.pdf          | Bin 0 -> 150869 bytes
+ old_exams-grnvs/midterm_2020-solution.pdf | Bin 0 -> 164773 bytes
+ old_exams-grnvs/midterm_2020.pdf          | Bin 0 -> 151761 bytes
+ old_exams-grnvs/midterm_2021-solution.pdf | Bin 0 -> 139569 bytes
+ old_exams-grnvs/midterm_2021.pdf          | Bin 0 -> 125728 bytes
+ old_exams-grnvs/midterm_2022-solution.pdf | Bin 0 -> 148034 bytes
+ old_exams-grnvs/midterm_2022.pdf          | Bin 0 -> 137173 bytes
+ old_exams-grnvs/midterm_2023-solution.pdf | Bin 0 -> 229426 bytes
+ old_exams-grnvs/midterm_2023.pdf          | Bin 0 -> 210483 bytes
+ old_exams-grnvs/quiz1_2017-solution.pdf   | Bin 0 -> 198650 bytes
+ old_exams-grnvs/quiz1_2017.pdf            | Bin 0 -> 200041 bytes
+ old_exams-grnvs/quiz1_2021-solution.pdf   | Bin 0 -> 86441 bytes
+ old_exams-grnvs/quiz1_2021.pdf            | Bin 0 -> 78793 bytes
+ old_exams-grnvs/quiz1_2022-solution.pdf   | Bin 0 -> 93977 bytes
+ old_exams-grnvs/quiz1_2022.pdf            | Bin 0 -> 92281 bytes
+ old_exams-grnvs/quiz1_2023-solution.pdf   | Bin 0 -> 115181 bytes
+ old_exams-grnvs/quiz1_2023.pdf            | Bin 0 -> 113700 bytes
+ old_exams-grnvs/quiz2_2017-solution.pdf   | Bin 0 -> 173261 bytes
+ old_exams-grnvs/quiz2_2017.pdf            | Bin 0 -> 172174 bytes
+ old_exams-grnvs/quiz2_2021-solution.pdf   | Bin 0 -> 94138 bytes
+ old_exams-grnvs/quiz2_2021.pdf            | Bin 0 -> 92793 bytes
+ old_exams-grnvs/quiz2_2022-solution.pdf   | Bin 0 -> 79050 bytes
+ old_exams-grnvs/quiz2_2022.pdf            | Bin 0 -> 77433 bytes
+ old_exams-grnvs/quiz2_2023-solution.pdf   | Bin 0 -> 106343 bytes
+ old_exams-grnvs/quiz2_2023.pdf            | Bin 0 -> 97925 bytes
+ old_exams-grnvs/quiz3_2017-solution.pdf   | Bin 0 -> 200232 bytes
+ old_exams-grnvs/quiz3_2017.pdf            | Bin 0 -> 198888 bytes
+ old_exams-grnvs/quiz3_2023-solution.pdf   | Bin 0 -> 84359 bytes
+ old_exams-grnvs/quiz3_2023.pdf            | Bin 0 -> 80392 bytes
+ old_exams-grnvs/quiz4_2017-solution.pdf   | Bin 0 -> 171562 bytes
+ old_exams-grnvs/quiz4_2017.pdf            | Bin 0 -> 175055 bytes
+ old_exams-grnvs/quiz4_2023-solution.pdf   | Bin 0 -> 87207 bytes
+ old_exams-grnvs/quiz4_2023.pdf            | Bin 0 -> 81621 bytes
+ old_exams-grnvs/quiz5_2017-solution.pdf   | Bin 0 -> 160521 bytes
+ old_exams-grnvs/quiz5_2017.pdf            | Bin 0 -> 159241 bytes
+ old_exams-grnvs/retake_2011-solution.pdf  | Bin 0 -> 952669 bytes
+ old_exams-grnvs/retake_2011.pdf           | Bin 0 -> 640940 bytes
+ old_exams-grnvs/retake_2012-solution.pdf  | Bin 0 -> 586651 bytes
+ old_exams-grnvs/retake_2012.pdf           | Bin 0 -> 528131 bytes
+ old_exams-grnvs/retake_2013-solution.pdf  | Bin 0 -> 568407 bytes
+ old_exams-grnvs/retake_2013.pdf           | Bin 0 -> 523378 bytes
+ old_exams-grnvs/retake_2014-solution.pdf  | Bin 0 -> 520107 bytes
+ old_exams-grnvs/retake_2014.pdf           | Bin 0 -> 501683 bytes
+ old_exams-grnvs/retake_2015-solution.pdf  | Bin 0 -> 919834 bytes
+ old_exams-grnvs/retake_2015.pdf           | Bin 0 -> 873708 bytes
+ old_exams-grnvs/retake_2016-solution.pdf  | Bin 0 -> 207325 bytes
+ old_exams-grnvs/retake_2016.pdf           | Bin 0 -> 168258 bytes
+ old_exams-grnvs/retake_2017-solution.pdf  | Bin 0 -> 172659 bytes
+ old_exams-grnvs/retake_2017.pdf           | Bin 0 -> 152165 bytes
+ old_exams-grnvs/retake_2018-solution.pdf  | Bin 0 -> 505049 bytes
+ old_exams-grnvs/retake_2018.pdf           | Bin 0 -> 454254 bytes
+ old_exams-grnvs/retake_2019-solution.pdf  | Bin 0 -> 242761 bytes
+ old_exams-grnvs/retake_2019.pdf           | Bin 0 -> 223354 bytes
+ old_exams-grnvs/retake_2020-solution.pdf  | Bin 0 -> 341343 bytes
+ old_exams-grnvs/retake_2020.pdf           | Bin 0 -> 320821 bytes
+ old_exams-grnvs/retake_2021-solution.pdf  | Bin 0 -> 227174 bytes
+ old_exams-grnvs/retake_2021.pdf           | Bin 0 -> 222032 bytes
+ old_exams-grnvs/retake_2022-solution.pdf  | Bin 0 -> 564108 bytes
+ old_exams-grnvs/retake_2022.pdf           | Bin 0 -> 528077 bytes
+ old_exams/endterm_2022-solution.pdf       | Bin 0 -> 213642 bytes
+ old_exams/endterm_2022.pdf                | Bin 0 -> 177513 bytes
+ old_exams/endterm_2023-solution.pdf       | Bin 0 -> 244597 bytes
+ old_exams/endterm_2023.pdf                | Bin 0 -> 235126 bytes
+ old_exams/midterm_2022-solution.pdf       | Bin 0 -> 297954 bytes
+ old_exams/midterm_2022.pdf                | Bin 0 -> 227814 bytes
+ old_exams/midterm_2023-solution.pdf       | Bin 0 -> 121475 bytes
+ old_exams/midterm_2023.pdf                | Bin 0 -> 118228 bytes
+ old_exams/midterm_2024.pdf                | Bin 0 -> 151370 bytes
+ old_exams/quiz1_2022-solution.pdf         | Bin 0 -> 77008 bytes
+ old_exams/quiz1_2022.pdf                  | Bin 0 -> 75712 bytes
+ old_exams/quiz1_2023-solution.pdf         | Bin 0 -> 83334 bytes
+ old_exams/quiz1_2023.pdf                  | Bin 0 -> 77929 bytes
+ old_exams/quiz1_2024-solution.pdf         | Bin 0 -> 89525 bytes
+ old_exams/quiz1_2024.pdf                  | Bin 0 -> 82004 bytes
+ old_exams/quiz2_2022-solution.pdf         | Bin 0 -> 75992 bytes
+ old_exams/quiz2_2022.pdf                  | Bin 0 -> 75103 bytes
+ old_exams/quiz2_2023-solution.pdf         | Bin 0 -> 74456 bytes
+ old_exams/quiz2_2023.pdf                  | Bin 0 -> 67204 bytes
+ old_exams/quiz2_2024.pdf                  | Bin 0 -> 97540 bytes
+ old_exams/retake_2022-solution.pdf        | Bin 0 -> 239870 bytes
+ old_exams/retake_2022.pdf                 | Bin 0 -> 204846 bytes
+ old_exams/retake_2023-solution.pdf        | Bin 0 -> 295764 bytes
+ old_exams/retake_2023.pdf                 | Bin 0 -> 251606 bytes
+ 133 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 83e0e6e928c3a90da4c29dde4b4a2dfa03a5b68d
+Author: Stephan Guenther <guenther@tum.de>
+Date:   Wed Oct 15 07:33:34 2025 +0200
+
+    slides chap1 (preliminary)
+
+ slides_chap1.pdf | Bin 0 -> 1880072 bytes
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 4833298051fc223d29944e7018c94524f47b92b7
+Author: Stephan Guenther <guenther@tum.de>
+Date:   Wed Oct 15 07:19:52 2025 +0200
+
+    slides chap0
+
+ slides_chap0.pdf | Bin 0 -> 7978667 bytes
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 82b000416e7b73f98c4433f4d362e918d345d73d
+Author: Stefan Lachnit <Stefan.Lachnit@tum.de>
+Date:   Wed Sep 10 10:32:57 2025 +0200
+
+    setup website for 2025ws
