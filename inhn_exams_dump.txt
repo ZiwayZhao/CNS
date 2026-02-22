@@ -1,0 +1,3043 @@
+--- PAGE 1 ---
+Sample Solution
+Chair of Distributed Systems and Security
+Department of Computer Engineering
+T echnical University of Munich
+E0051
+Place student sticker here
+Note:
+• During the attendance check a sticker containing a unique code will be put on this exam.
+• This code contains a unique number that associates this exam with your registration
+number.
+• This number is printed both next to the code and to the signature ﬁeld in the attendance
+check list.
+Computer Networking and IT Security
+Exam: INHN0012 / Endterm Date: Wednesday 19th February , 2025
+Examiner: Prof. Dr.-Ing. Stephan Günther Time: 14:00 – 15:30
+Prof. Dr.-Ing. Georg Carle
+Working instructions
+• This exam consists of 16 pages with a total of 6 problems.
+Please make sure now that you received a complete copy of the exam.
+• The total amount of achievable credits in this exam is 90 credits.
+• Detaching pages from the exam is prohibited.
+• Allowed resources:
+– one non-programmable pocket calculator
+– one analog dictionary English → native language
+• Subproblems marked by * can be solved without results of previous subproblems.
+• Answers are only accepted if the solution approach is documented. Give a reason for each
+answer unless explicitly stated otherwise in the respective subproblem.
+• Do not write with red or green colors nor use pencils.
+• Physically turn off all electronic devices, put them into your bag and close the bag.
+Left room from to / Early submission at
+– Page 1 / 16 – 1141-05-0065-E0051-01
+
+--- PAGE 2 ---
+Sample Solution
+Problem 1 Multiple Choice (18 credits)
+The following subproblems are multiple choice / multiple answer, i. e. at least one answer per subproblem is
+correct. Subproblems with a single correct answer are graded with 1 credit if correct. Those with more than
+one correct answers are graded with 1 credit per correct answer and -1 credit per wrong answer. Missing
+crosses have no inﬂuence. The minimal amount of credits per subproblem is 0 credits.
+Mark correct answers with a cross !
+T o undo a cross, completely ﬁll out the answer option ↭
+T o re-mark an option, use a human-readable marking !↭
+a)* The internet is based on the . . .
+DARP ANET . ! ARP ANET . Usenet. CIVILNET .
+b)* How many broadcast domains does the network to the right contain?
+4 6 5 1 3 ! 2
+c)* How many collision domains does the network to the right contain?
+6 5 ! 4 3 2 1
+d)* Which of the following statements about hubs and switches are correct?
+! Switches operate at Layer 2 and makes for-
+warding decisions based on Destination MAC
+addresses.
+! Both hubs and switches are transparent de-
+vices that do not modify the frame contents
+during transmission.
+Switches operate at Layer 2 and makes for-
+warding decisions based on Source MAC ad-
+dresses.
+Switches operate at Layer 1 and simply re-
+generate electrical signals without processing
+frame information.
+e)* Consider an IPv4 network with an address range 192.168.1.0/24 is divided into four subnets of size (/26).
+Which statements are true about these subnets?
+! Each subnet has 62 usable addresses.
+The subnet mask for each subnet is
+255.255.255.224.
+The ﬁrst usable IP address in the third subnet
+is 192.168.1.128.
+! The broadcast address for the second subnet
+is 192.168.1.127.
+f)* Which IP header ﬁelds change while packets get routed from one endpoint to another (assuming no NA T
+or other protocol modiﬁcations)?
+IHL
+Flow label
+Protocol
+! TTL
+Fragment Offset
+! Header Checksum
+Version
+Destination IP Ad-
+dress
+g)* In an IPv6 network, large packets must be fragmented to travel across links with an MTU of 1280 bytes.
+Which of the following statements are true?
+IPv6 fragments can be further fragmented by
+routers.
+IPv6 fragments are reassembled at intermedi-
+ate routers.
+! The More Fragments (MF) ﬂag in the Fragment
+Header indicates whether more fragments are
+to follow.
+! IPv6 fragmentation is handled by the sending
+device, not intermediate routers.
+1141-05-0065-E0051-02 – Page 2 / 16 –
+
+--- PAGE 3 ---
+Sample Solution
+h)* What privacy issues arise when SLAAC generates an IPv6 address based on the device’s MAC address?
+The address can be spoofed by attackers.
+! It is possible to identify the network card manu-
+facturer.
+! The generated IPv6 allows device tracking on
+the internet.
+SLAAC exposes the routing preﬁx of the ISP .
+i)* A network contains multiple DHCP servers. Which statements about DHCP broadcast behavior are
+correct?
+Each client must request addresses from every
+responding server individually .
+Using unicast during request would be more
+efﬁcient as it reduces network trafﬁc during
+server discovery .
+! DHCP Request broadcast simultaneously ac-
+cepts one offer while notifying others of rejec-
+tion.
+! Initial broadcast enables receiving multiple of-
+fers from all the available DHCP servers.
+j)* A TCP connection is experiencing high packet loss due to random bit errors on an unreliable link (not
+congestion). Which of the following issues might arise?
+Flow control mechanisms will prevent further
+data transmission until packet loss stops en-
+tirely .
+! TCP will incorrectly interpret packet loss as net-
+work congestion and reduce its transmission
+rate unnecessarily .
+! The congestion window will remain small due
+to frequent restarts of the slow start phase.
+TCP will automatically switch to UDP for faster
+retransmissions in such scenarios.
+k)* Y ou observe the UDP datagram whose header is shown in Figure 1.1. Which service is likely being
+addressed?
+0x0000 d0 2c 00 43
+0x0040 00 26 a9 86
+Figure 1.1: Hexdump of the UDP header.
+TFTP DHCP NTP ! BOOTP DNS HTTP
+– Page 3 / 16 – 1141-05-0065-E0051-03
+
+--- PAGE 4 ---
+Sample Solution
+0
+1
+0
+1
+2
+0
+1
+0
+1
+0
+1
+2
+0
+1
+Problem 2 Ethernet Physical Layer (17 credits)
+In this problem we investigate two different implementations of the Ethernet Physical Layer. For now, we
+consider the somewhat outdated 10BASE-2. As line code the Manchester Code is being used. There is no
+additional channel coding. Consider the 10BASE-2 signal shown in Figure 2.1.
+t/10→ 7 s
+s(t)
+1 2 3 4 5 6 7 8 9 10
+A
+↑A
+Figure 2.1: Idealized 10BASE-2 signal
+a)* Is the signal time continuous or time discrete (no reasoning required)?
+Time continuous
+b)* Determine the bit sequence transmitted in the time interval t ↓[0 µs, 1 µs).
+Hint: There exist two valid solutions, stating one is sufﬁcient.
+According to IEEE 802.3: 01 01 11 11 01
+Alternative: 10 10 00 00 10
+c)* How long does it take to serialize a single bit?
+From Figure 2.1: T =1 · 10→ 7 s = 0.1 µs
+d)* Determine the data rate achievable by 10BASE-2 (calculation or reasoning).
+r = 1 bit
+T = 10 Mbit/s
+e) Determine the neccessary spectral bandwith according to Hartley such that the data rate from Subprob-
+lem d) can be achieved by a binary line code.
+r =2 B · log2(M) bit ↔ B = r
+2 log2(M) bit = 5 MHz
+f) Reason why 10BASE-2 occupies at least a bandwidth of B↑ = 10 MHz.
+A bit is represented by two changes in signal with the Manchester Code. Therefore, the baud rate is
+doubled compared to e. g. NRZ and thus the required bandwidth also doubles.
+1141-05-0065-E0051-04 – Page 4 / 16 –
+
+--- PAGE 5 ---
+Sample Solution
+g) Reason which other, binary line code a higher data rate could be achieved at the same required
+bandwidth.
+NRZ because here the baud rate corresponds to the bit rate.
+h) Which signiﬁcant advantage does the Manchester Code offer?
+Clock recovery (and DC-freeness)
+Now we consider the newer 100BASE-TX stadard, which uses ML T -3 with 4B5B coding as line code. The
+effective data rate is 100 Mbit/s. Figure 2.2 shows an idealized signal of a single cable core, which represents
+the ﬁrst 4 bit of the message 0101 111101.
+1 2 3 4 5 6 7 8 9 10
+A
+↑A
+t/T
+s(t)
+Figure 2.2: Idealized ML T -3 signals
+i)* Complete the signal in Figure 2.2 such that it represents the remaining 6 bit.
+j) Explain whether problems occur when using ML T -3 coding when recognizing long zero or one sequences.
+Long sequences of zeros result in a constant signal.Since clock recovery is not automatically given, it
+is a problem.
+k)* Name two advantages of 4B5B encoding.
+Limiting the maximum length of zero sequences
+Offers additional control characters
+l)* How high must the bit rate actually be for 100BASE-TX in order to achieve an effective transmission speed
+of 100 Mbit/s?
+Hint: This is only about the bit rate from the point of view of the physical layer. Y ou therefore do not need to
+consider the overhead caused by protocol headers!
+rbrutto = rnetto
+R = 100 Mbit/s · 5
+4 = 125 Mbit/s
+0
+1
+0
+1
+0
+1
+2
+0
+1
+2
+0
+1
+2
+0
+1
+– Page 5 / 16 – 1141-05-0065-E0051-05
+
+--- PAGE 6 ---
+Sample Solution
+0
+1
+0
+1
+0
+1
+0
+1
+2
+0
+1
+Problem 3 NAT and Routing (18 credits)
+Given the network topology shown in Figure 3.1. PC1 and PC2 are connected via the Access Point AP
+(IEEE 802.11) to the Router R1, which offers access to the Internet.
+PC1
+PC2
+AP
+eth0wlan0
+R1 R2 R3 SW1
+SRV1
+www.cns.net.in.tum.de
+eth0:10.0.1.0/20 wan0:87.186.224.45/30
+wan0:87.186.224.46/30
+eth0
+eth0
+IP 10.0.1.1
+Subnet Mask 255.255.240.0
+Gateway 10.0.1.0
+PC1wlan0
+IP 10.0.1.2
+Subnet Mask 255.255.240.0
+Gateway 10.0.1.0
+PC2wlan0
+Figure 3.1: Network topology
+a)* Reason wether or not the address10.0.1.0is useable for the given preﬁx. If not, assign R1 another
+useable address in the same subnet.
+10.0.1.0 is useable in 10.0.0.0/20 because it is neither the ﬁrst nor the last address.
+b)* Determine the network and broadcast addresses of the subnet in which PC1, PC2, and R1 are located.
+Network address 10.0.0.0
+Broadcast address 10.0.15.255
+c) How many addresses are available to address devices in this network? Give the calculation.
+The ﬁrst and last address are not useable, thus:
+232→20↑2 = 4094
+d) Assign a sensible IP address, subnet mask, and gateway address to PC1 and PC2 respectively , so that
+they can establish a connection to the Internet. Enter the values directly in Figure 3.1. T ake note of a possibly
+different IP of R1 from T ask a).
+e)* How many /20 subnets are there in the network 10.0.0.0/8? Also provide the calculation method!
+220→8= 4096
+1141-05-0065-E0051-06 – Page 6 / 16 –
+
+--- PAGE 7 ---
+Sample Solution
+f)* Reason why R1 must support NA T such that PC1 and PC2 can access the internet.
+PC1 and PC2 are located in a private network. Their IP addresses are not global routable.
+g)* Which minimal information must R1 store in its NA T table?
+Local IP of hosts, local source port, and translated (global) source port.
+(The global IP of R1 is not neccessary since R1 has only one global IP .)
+In the following we abbreviate IP and MAC addresses as follows: <device name> or
+<device name>.<interface> if the interface is not unique, e g. PC1 or R1.wan0. Note that for the following
+subproblems additional routers are locate between R2 and R3.
+PC1 now accesses the website https://www.cns.net.in.tum.de.
+h)* Add for the ﬁrst packet being transmitted from PC1 to www.cns.net.in.tum.de the header ﬁelds in the
+three empty boxes of Figure 3.2. If a ﬁeld is not uniquely deﬁned, choose a meaningful one.
+PC1
+PC2
+AP
+eth0wlan0
+R1 R2 R3 SW1
+SRV1
+www.cns.net.in.tum.de
+eth0: 10.0.1.0/20 wan0: 87.186.224.45/30
+wan0: 87.186.224.46/30
+eth0
+eth0
+RecvMac AP .wlan0
+TransMac PC1
+DstMAC R1.eth0
+SrcIP PC1
+DstIP SRV1
+TTL 64
+SrcPort 2000
+DstPort 443
+SrcMAC R1.wan0
+DstMAC R2.wan0
+SrcIP R1.wan0
+DstIP SRV1
+TTL 63
+SrcPort 2001
+DstPort 443
+SrcMAC R3.eth0
+DstMAC SRV1
+SrcIP R1.wan0
+DstIP SRV1
+TTL 59
+SrcPort 2001
+DstPort 443
+Figure 3.2: Netztopologie
+0
+1
+0
+1
+0
+1
+2
+3
+4
+5
+– Page 7 / 16 – 1141-05-0065-E0051-07
+
+--- PAGE 8 ---
+Sample Solution
+0
+1
+2
+3
+4
+5
+i) Add the header ﬁelds for the answer from [www.cns.net.in.tum.de to PC1 the header ﬁelds in the three
+empty boxes of Figure 3.3. If a ﬁeld is not uniquely deﬁned, choose a meaningful one.
+PC1
+PC2
+AP
+eth0wlan0
+R1 R2 R3 SW1
+SRV1
+www.cns.net.in.tum.de
+eth0: 10.0.1.0/20 wan0: 87.186.224.45/30
+wan0: 87.186.224.46/30
+eth0
+eth0
+RecvMac PC1
+TransMac AP .wlan0
+SrcMAC R1.eth0
+SrcIP SRV1
+DstIP PC1
+TTL 59
+SrcPort 443
+DstPort 2000
+SrcMAC R2.wan0
+DstMAC R1.wan0
+SrcIP SRV1
+DstIP R1.wan0
+TTL 60
+SrcPort 443
+DstPort 2001
+SrcMAC SRV1
+DstMAC R3.eth0
+SrcIP SRV1
+DstIP R1.wan0
+TTL 64
+SrcPort 443
+DstPort 2001
+Figure 3.3: Network topology
+1141-05-0065-E0051-08 – Page 8 / 16 –
+
+--- PAGE 9 ---
+Sample Solution
+Problem 4 Recordings (14.5 credits)
+Despite hopefully passing the exam, you would like to commendably repeat the contents of the lecture again
+after some time. Y ou can use the lecture recordings to do this. The lecture about TCP was particularly
+appealing to you. The video is 512 MiB in size. Y our computer is currently connected to the Internet via
+Ethernet and IPv6 to the Internet. The video should be accessed via HTTP 1.1. With no options are used for
+the underlying TCP connection. The path MTU is 1500 B.
+We look at the associated TCP connection and the transmission of the segments.
+a)* Show that the maximum segment size, so that no fragmentation is required, is 1440 B in this scenario.
+MTU - | IPv6-PCI | - | TCP-PCI |
+1500 B - 40 B - 20 B = 1440 B
+We assume that the HTTP request 100 B in size. The ﬁrst segment after the HTTP request only contains
+the HTTP metadata of the HTTP response, which is 500 B in size. Only the segments that follow contain
+the requested data. The size of the other segments was chosen to be as large as possible. Segments are
+acknowledged as soon as possible.
+b)* Complete the TCP handshake details. Assume that no user data is transferred during the handshake.
+SEQ = 1234, SYN
+SEQ = 5678, SYN, ACK = 1235
+SEQ = 1235 , ACK = 5679
+c) Add the missing information for communication after the handshake and add the missing arrow direc-
+tions. In the additional box of the corresponding lines, also mark segments with an HTTP request with
+REQ , segments with an HTTP response with RES and segments with the data with D .
+SEQ = 1235 , ACK = 5679 REQ
+SEQ = 5679 , ACK = 1335 RES
+SEQ = 1335 , ACK = 6179
+SEQ = 6179 , ACK = 1335 D
+SEQ = 1335 , ACK = 7619
+0
+1
+0
+1
+0
+1
+2
+3
+4
+5
+– Page 9 / 16 – 1141-05-0065-E0051-09
+
+--- PAGE 10 ---
+Sample Solution
+0
+1
+0
+1
+0
+1
+0
+1
+2
+0
+1
+d) How many segments with the requested data will the server in total send? State your solution approach.
+⌈ 536870912 B
+1440 B
+⌉
+= 372828
+The video transmission has now started. We now assume that the simpliﬁed congestion control mechanism
+of TCP Reno, as presented in the lecture, is used and that we are in the congestion avoidance (CA) phase.
+We assume that the bandwidth of the connection allows 17 MSS/RTT and that no router has a buffer on the
+way to the server.
+e)* What happens if the transmission window ws grows to over 17 MSS?
+Packet loss occurs due to the overload situation. There will be duplicated ACKs.
+f) How will congestion control react to this?
+wc is cut in half, CA restarts
+g)* What is the effective throughput (in MSS/RTT) of the transmission?
+9 + 10 + 11 + 12 + 13 + 14 + 15 + 16 + 17 + 17 MSS
+10 RTT = 13.4 MSS/RTT
+Alternative solution according to cheatsheet:
+T = 18
+2 +1 · RTT = 10 RTT, n = 3
+8 182 + 3
+4 18 = 135
+ω = 1
+135 , rTCP = 135 MSS
+10 RTT · ( 134
+135 ) = 13.4 MSS
+RTT
+h)* Suppose your computer is very weak and is overloaded by the incoming segments. How can this situation
+be avoided? Name the mechanism and describe brieﬂy how it works.
+Flow control
+The receiver communicates the size of its receive window wr .
+The transmitter then adjusts its transmission window and thus its transmission rate.
+1141-05-0065-E0051-10 – Page 10 / 16 –
+
+--- PAGE 11 ---
+Sample Solution
+Problem 5 DNS (14.5 credits)
+Y ou have heard from fellow students that exam solutions can be found on grnvs.tum.de. In the hope of
+ﬁnding the solution to this year’s endterm, you go to the website in your browser. Y ou are in a small home
+network and the router R1 is connected to the Internet. Via DHCP , R1 conﬁgures itself as the default resolver
+on your laptop C1. On R1 R2 is entered as a resolver.
+Client C1
+I! Switch S1
+IR
+Router R1
+I!
+Internet
+Public resolver R2
+!R
+dns50.t-ipnet.de.
+IR
+a.root-servers.net.
+!R
+a.nic.de.
+!R
+dns1.lrz.de.
+!R
+grnvs.tum.de.
+IR
+A B C
+1 2
+34
+Example drawing E1
+1
+2
+3
+4 5
+6
+7
+8
+9
+10
+Figure 5.1: Simpliﬁed network topology
+a)* Enter all DNS queries and responses that are necessary for the name resolution of grnvs.tum.de in
+Figure 5.1. Draw arrows and number them in the order of appearance as in the example drawing E1.
+Assume that all caches are empty . The following is known:
+1. a.nic.de is the authoritative nameserver for the zone de.
+2. dns1.lrz.de is the authoritative nameserver for the zone tum.de.
+Y ou will ﬁnd an additional form at the end of the exam in Figure 6.1. Please also indicate its use in the
+illustration on this page if necessary .
+b) For the network components used, select whether they resolve DNS queries iteratively ( I ) or recursively
+( R ) by ticking the respective box. Give reasons for your choice.
+Clients and routers resolve DNS queries recursively , as they generally do not have sufﬁcient resources
+(connection, computing power and memory) to perform and cache queries efﬁciently . Resolvers and
+authoritative DNS servers answer queries iteratively by deﬁnition.
+c)* How can the resolver make the request to dns1.lrz.de without ﬁrst explicitly resolving its domain?
+Using so-called glue records , a name server can send the IP addresses of another name server in
+addition to the NS record.
+0
+1
+2
+3
+0
+1
+2
+3
+0
+1
+2
+– Page 11 / 16 – 1141-05-0065-E0051-11
+
+--- PAGE 12 ---
+Sample Solution
+0
+1
+0
+1
+0
+1
+2
+0
+1
+0
+1
+Y ou are a working student and have been given the task of creating a zone ﬁle for grnvs.net. Fill in the
+following zone ﬁle so that the requirements of the individual subtasks are met. The start of the zone ﬁle is
+already predeﬁned (the SOA record is abbreviated for simplicity).
+For the following subtasks, enter the letter of the corresponding subtask in the dotted box at the end
+of each line .
+$TTL 86400 ; 1 day
+grnvs.net. IN SOA ns.grnvs.net. info.grnvs.net. [...]
+grnvs.net. NS ns.grnvs.net.
+grnvs.net. NS dns2.lrz.de. d)
+ns.grnvs.net. A 95.217.202.138. e)
+grnvs.net. A 188.95.232.10 f)
+grnvs.net. AAAA 2a00:4700:0:9:f:: f)
+grnvs.net. MX 10 postrelay1.lrz.de. g)
+shop.grnvs.net. CNAME grnvs.myshopify.com. h)
+d)* ns.grnvs.net is already entered as the primary name server for the zone. The server dns2.lrz.de
+should act as a secondary name server for reliability . State the respective record.
+e)* The primary name server should be accessible at the IP address 95.217.202.138.
+f)* When someone calls up grnvs.net in their browser, the GRNVS website should be displayed. The
+corresponding web server has the IP addresses 188.95.232.10 and 2a00:4700:0:9:f::.
+g) T o allow students to send emails to info@grnvs.net, a mail server must be conﬁgured. T o avoid having
+to operate your own mail server, the LRZ email service postrelay1.lrz.de should be used with priority 10.
+h) T o avoid having to operate your own online store, shop.grnvs.net should serve as an alias for
+grnvs.myshopify.com.
+1141-05-0065-E0051-12 – Page 12 / 16 –
+
+--- PAGE 13 ---
+Sample Solution
+Problem 6 Short Questions: General Knowledge (8 credits)
+a)* From the lecture, the expression
+TPV = 1
+r
+(⌈ L
+pmax
+⌉
+· Lh + L
+)
+  
+1
++ d
+εc0
+2
++ n · Lh + pmax
+r  
+3
+(6.1)
+is known for calculating the transmission time in packet switching. Brieﬂy explain the three summands. Note:
+The question is not asking about the meaning of individual variables.
+1 Serialization time of all packets at the source including headers
+2 Propagation delay over the entire distance
+3 Serialization time, which occurs at n (intermediate) hops
+b)* Brieﬂy explain how Simplex and Half-Duplex differ.
+Simplex refers to the unidirectional use of a medium. In contrast, with Half-Duplex, the medium can
+be used bidirectionally but not simultaneously by both communication partners.
+c)* Given the 16-bit data 10101010 11001100 in Network Byte Order, the binary representation in Little
+Endian is:
+11001100 10101010
+d)* What is SLAAC used for ?
+For automatic conﬁguration of IPv6 addresses based on preﬁx announcement and MAC address
+e)* Give one purpose of the Neighbor Discovery Protocol discussed in the lectures?
+Address Resolution, Duplicate Address Detection or Neighbor Unreachability Detection
+f)* Explain the difference between sampling and quantization ?
+Sampling: Discretization in the time domain.
+Quantization: Discretization in value domain.
+0
+1
+2
+3
+0
+1
+0
+1
+0
+1
+0
+1
+0
+1
+– Page 13 / 16 – 1141-05-0065-E0051-13
+
+--- PAGE 14 ---
+Sample Solution
+Client C1
+IR Switch S1
+IR
+Router R1
+IR
+Internet
+Public resolver R2
+IR
+dns50.t-ipnet.de.
+IR
+a.root-servers.net.
+IR
+a.nic.de.
+IR
+dns1.lrz.de.
+IR
+grnvs.tum.de.
+IR
+A B C
+1 2
+34
+Example drawing E1
+Figure 6.1: Additional preprint for Problem 5
+Additional space for solutions–clearly mark the (sub)problem your answers are related to and strike
+out invalid solutions.
+1141-05-0065-E0051-14 – Page 14 / 16 –
+
+--- PAGE 15 ---
+Sample Solution
+– Page 15 / 16 – 1141-05-0065-E0051-15
+
+--- PAGE 16 ---
+Sample Solution
+1141-05-0065-E0051-16 – Page 16 / 16 –
+
+--- PAGE 17 ---
+Sample Solution
+Chair of Distributed Systems and Security
+Scholl of Computation, Information and T echnology
+T echnical University of Munich
+Esolution
+Place student sticker here
+Note:
+• During the attendance check a sticker containing a unique code will be put on this exam.
+• This code contains a unique number that associates this exam with your registration
+number.
+• This number is printed both next to the code and to the signature ﬁeld in the attendance
+check list.
+Computer Networking and IT -Security
+Exam: INHN0012 / Endterm Date: Thursday 22nd February , 2024
+Examiner: Prof. Dr.-Ing. Stephan Günther, Leander Seidlitz M.Sc. Time: 10:00 – 11:30
+Working instructions
+• This exam consists of 16 pages with a total of 6 problems.
+Please make sure now that you received a complete copy of the exam.
+• The total amount of achievable credits in this exam is 90 credits.
+• Detaching pages from the exam is prohibited.
+• Allowed resources:
+– one non-programmable pocket calculator
+– one analog dictionary English → native language
+• Subproblems marked by * can be solved without results of previous subproblems.
+• Answers are only accepted if the solution approach is documented. Give a reason for each
+answer unless explicitly stated otherwise in the respective subproblem.
+• Do not write with red or green colors nor use pencils.
+• Physically turn off all electronic devices, put them into your bag and close the bag.
+Left room from to / Early submission at
+– Page 1 / 16 –
+
+--- PAGE 18 ---
+Sample Solution
+Problem 1 Multiple Choice (15 credits)
+The following subproblems are multiple choice / multiple answer, i. e. at least one answer per subproblem is
+correct. Subproblems with a single correct answer are graded with 1 credit if correct. Those with more than
+one correct answers are graded with 0.5 credit per correct answer and -0.5 credit per wrong answer. Missing
+crosses have no inﬂuence. The minimal amount of credits per subproblem is 0 credits.
+Mark correct answers with a cross !
+T o undo a cross, completely ﬁll out the answer option ↭
+T o re-mark an option, use a human-readable marking !↭
+a)* Which of the following are security goals according to the lecture?
+Useability
+Deployability
+Advertisability
+Performance
+! Data Integrity
+Agility
+! Controlled Access
+Volatility
+! Conﬁdentiality
+Routeability
+! Authenticity
+Sustainability
+b)* IPv4 addresses are 4 bytes long. How long is an IPv6 address?
+! 16 bytes 6 bytes 128 bytes 8 bytes
+c)* As of today , which of the following cryptographic hash functions are considered secure?
+MD4 SHA-1 MD5 MD2 ! BLAKE2 ! SHA-2
+d)* IPsec is . . .
+! policy based
+a layer 4 protocol
+only available for IPv4
+insecure since the protocol was broken in 2009
+e)* Which is the correct deﬁnition of forward secrecy?
+A cryptography scheme provides Perfect Forward Secrecy (PFS) if future encrypted sessions maintains
+their conﬁdentiality in the scenario that the long-term secret, the current session keys and all sessions
+trafﬁc become known to an attacker.
+! A cryptography scheme provides Perfect Forward Secrecy (PFS) if previously encrypted sessions
+maintains their conﬁdentiality in the scenario that the long-term secret, the current session keys and all
+sessions trafﬁc become known to an attacker.
+f)* Which of the following is an AEAD cipher?
+AES-CBC AES-CTR ! AES-GCM AES-ECB
+g)* Which factors inﬂuence the sender window of TCP?
+! Timeouts
+! RTT
+Max. data rate on Layer 1
+! Receive window
+! Acknowledgements
+Number of hops
+– Page 2 / 16 –
+
+--- PAGE 19 ---
+Sample Solution
+h)* Y ou observe the UDP datagram whose header is shown in Figure 1.1. Which service is likely being
+addressed?
+0x0000 d0 2c 00 35
+0x0004 00 26 a9 86
+Figure 1.1: Hexdump of the UDP header
+DHCP FTP HTTP ! DNS SSH HTTPS
+i)* What is the FQDN of the PTR record for the IP address 203.0.113.42?
+24.311.0.302.in-addr-arpa.
+! 42.113.0.203.in-addr.arpa.
+302.0.311.21.in-addr.arpa.
+203.0.113.42.in-addr-arpa.
+j)* Which of the following is an exterior gateway protocol?
+EIGRP ! BGP RIP OSPF IGRP
+k)* How many L2 address types does 802.11 (WLAN) know? (Hint: source, destination, . . . )
+3 ! 4 7 2 5
+l)* What is CRC used for in Ethernet?
+Error Forwarding ! Error Detection Error Correction Error Propagation
+m)* What does QAM modulate?
+Density of the signal
+! Amplitude of the signal
+! Phase of the signal
+Speed of the signal
+– Page 3 / 16 –
+
+--- PAGE 20 ---
+Sample Solution
+0
+1
+0
+1
+2
+0
+1
+2
+0
+1
+2
+Problem 2 Code Demos — Chat Application with UDP / TCP (14.5 credits)
+In the lecture we have written several versions of a small chat application that either uses UDP or TCP as
+transport layer protocol. First, we consider the original UDP chat that was intended for a 1:1 communication
+between two clients. In particular, this version was identical on both sides, i. e., there was no server involved.
+a)* On your local computer, you were able to run the client by starting it two times with the following command
+lines:
+• udpchat.py 6112 127.0.0.1 6113
+• udpchat.py 6113 127.0.0.1 6112
+Brieﬂy explain the three arguments supplied to the application.
+udpchat <source port> <destination IP> <destination port>
+b) We have rewritten the udpchat.py in the lecture to act as a relay chat server that could be started as
+udpchat_server.py 6112 . Explain why this single argument is sufﬁcient in that case.
+The server listens on all its interfaces on port 6112.Clients still need to know its IP address, but the
+server does not need to know the IPs of its clients in advance. It will learn their addresses once
+messages are incoming on port 6112.
+c) Argue whether or not clients need to specify a source port when communicating with the udpchat_server.
+They do not need to specify a source port anymore:they can choose a random ephemeral port. The
+server will learn the necessary port number just like it does with the IP addresses of clients.
+d)* How many sockets do udpchat and udpchat_server need, respectively? Give a reason for your answer.
+Both need only a single socket.Since UDP is stateless, one socket can be used to send data to and
+receive data from arbitrary remotes.
+– Page 4 / 16 –
+
+--- PAGE 21 ---
+Sample Solution
+After implementing the udpchat_server, we rewrote the application again to use TCP instead of UDP as
+transport protocol.
+e) Did anything change regarding the arguments supplied to tcpchat_server.py?
+No, the server still awaits incoming messages (connection requests) on a speciﬁc port. Remote ports
+and addresses are learned dynamically .
+f)* Argue how many sockets the server now needs to handle N clients?
+N +1 , namely N for the clients and one additional as listening socket for incoming connection requests.
+g)* Name two advantages of the TCP variant compared to the UDP server. (Without reason)
+1. Disconnected clients can easily be identiﬁed
+2. Messages are guaranteed to be received (as long as the connection holds)
+h)* Name two disadvantages of the TCP variant compared to the UDP server. (Without reason)
+1. The server must hold more state
+2. Handling disconnects by getting exceptions / errors while reading from or writing to sockets can
+be tricky
+0
+1
+0
+1
+2
+0
+1
+2
+0
+1
+2
+– Page 5 / 16 –
+
+--- PAGE 22 ---
+Sample Solution0
+1
+0
+1
+Problem 3 Wireshark (16 credits)
+We consider the network topology depicted in Figure 3.1. The PC tries to establish an SSH connection via
+IPv4 to the server SRV . The MAC and IP addresses of the devices’ interfaces are given. Assume that IP
+addresses are statically conﬁgured and the PC has not yet contacted its router since reboot.
+Internet
+PC SW R1 R2 SRV
+04:7b:cb:b7:08:00
+192.168.0.8
+3c:a6:2f:78:08:00
+192.168.0.254
+04:7b:cb:b7:08:01
+95.157.26.64
+f8:52:fb:84:4d:ee
+131.159.252.145
+34:3a:f7:18:d0:6c
+131.159.20.254
+04:7b:cb:b7:08:01
+131.159.20.214
+Figure 3.1: Network topology
+We consider the frame sent from PC towards SW as depicted in Figure 3.1.
+In the following we want to derive the hexdump of that frame based on the information given in Figure 3.1
+and the following subproblems. Fill in the contents step by step in Figure 3.2. As an example, the L2 receiver
+address is already ﬁlled in as answer to some (not existing) Subproblem x).
+Note: the cheat sheet handed out together with this exam contains everything you need.
+0x00 04 7b cb b7 08 00 00 01
+0x10 08 00 06 04 00 01 04 7b cb b7 08 00 192 10168 100 10 8 10
+0x20 00 00 00 00 00 00 192 10168 10 0 10 254 1042 0a f1 73
+0x30
+0x40
+0x50
+0x60
+0x00 ff ff ff ff ff ff 08 06
+0x10
+0x20
+0x30
+0x40
+0x50
+0x60
+(x) end of L2
+end of L2 SDU end of frame
+(b) HT ype
+PT ype HLen PLen Operation Sender HW address Sender protocol address
+T arget HW address T arget protocol address
+Figure 3.2: Preprint for the frame’s hexdump
+a) Who is (in general) being addressed by the given receiver address?
+Any node on the broadcast domain.
+b)* Fill in the transmitter address of layer 2 in Figure 3.2.
+– Page 6 / 16 –
+
+--- PAGE 23 ---
+Sample Solution
+c)* What is the type of the L2 SDU?
+ARP (Request), given by the Ethertype 0x0806.
+d) What is the purpose of this frame?
+Determining the router’s MAC address given its IP address.
+Before we continue to ﬁll in the hexdump, we want to mark the end of the L2 payload and the end of the
+frame.
+e)* Mark the end of the L2 payload as well as of the frame itself in Figure 3.2. As an example, the end of
+the L2 header is already marked.
+f) Fill in the frame check sequence given as 42 0a f1 73 in Figure 3.2.
+After having ﬁgured out the type of the L2 payload, it should be straight-forward now to ﬁll in the complete
+frame. Y ou do not need to name the ﬁelds – just ﬁll it in with hex digits. If IP addresses should occur, you do
+not need to convert them to hex – just ﬁll it in Byte by Byte.
+g) Fill in the frame’s payload.
+h) Assuming IPv6 had been used instead of IPv4. T o which protocol would this frame belong to in that case?
+It would be a neighbor solicitation.
+0
+1
+0
+1
+0
+1
+2
+0
+1
+0
+1
+2
+3
+4
+5
+6
+7
+8
+0
+1
+– Page 7 / 16 –
+
+--- PAGE 24 ---
+Sample Solution
+0
+1
+2
+0
+1
+2
+0
+1
+2
+0
+1
+2
+0
+1
+2
+Problem 4 Line codes (12 credits)
+In this problem we want to compare the four line codes NRZ, RZ, Manchester, and ML T -3 by means of the
+example bit sequence 0000 1101 . Figure 6.2 gives you a template for all four different signals. Y ou ﬁnd
+another pre-print at the end of the exam if necessary . Make sure to strike-out solutions that should not
+be graded.
+NRZ 0 t
+s(t)
+1 2 3 4 5 6 7 8 9 10 11 12
+RZ 0 t
+s(t)
+1 2 3 4 5 6 7 8 9 10 11 12
+Manchester 0 t
+s(t)
+1 2 3 4 5 6 7 8 9 10 11 12
+ML T -3 0 t
+s(t)
+1 2 3 4 5 6 7 8 9 10 11 12
+Figure 4.1: Preprint for signals
+As an example we show the resulting signal for NRZ in Figure 6.2. Please use positive values (or turns from
+lower to higher voltages) to indicate a logical 1, and vice versa for a logical 0. Use s(t)=0 as start value.
+a)* Draw the signal for RZ in Figure 6.2.
+b)* Draw the signal for Manchester in Figure 6.2.
+c)* Draw the signal for ML T -3 in Figure 6.2.
+d) Compare NRZ to RZ and Manchester. Reason which of the signals requires the most bandwidth.
+Both RZ and Manchester have two signal changes per line code symbol and thus require more
+bandwidth than NRZ.
+e) Reason which of the four line codes allow(s) for clock recovery / automatic synchronization?
+RZ and Manchester since they require a voltage change per symbol.
+– Page 8 / 16 –
+
+--- PAGE 25 ---
+Sample Solution
+f) Name an approach that can be used to allow for clock recovery even if the underlying line code does not
+support it on its own.
+For instance, 4B5B encoding can be used together with ML T -3 to guarantee a change in the signal
+every several bits.
+0
+1
+2
+– Page 9 / 16 –
+
+--- PAGE 26 ---
+Sample Solution
+0
+1
+0
+1
+2
+0
+1
+2
+0
+1
+Problem 5 Dynamic Routing (19 credits)
+We consider the network shown in Figure 5.1. The routers are using RIP as dynamic routing protocol. The
+tables next to the routers represent the (simpliﬁed) routing table of the respective router containing the
+destination Dst, next hop NH, and the costs.
+A
+B
+C D E
+Dst NH Cost
+BB 0
+C C 0
+D C 1
+E C 2
+Dst NH Cost
+AA 0
+C C 0
+D C 1
+E C 2
+Dst NH Cost
+AA 0
+B B 0
+D D 0
+E D 1
+Dst NH Cost
+A C 1
+B C 1
+C C 0
+E E 0
+Dst NH Cost
+A D 2
+B D 2
+C D 1
+D D 0
+Figure 5.1: T opology and initial routing tables at boot time
+a)* Which metric is used by RIP? (Without reason)
+Hop Count
+b)* RIP is a distance vector protocol. Explain the difference to link state protocols.
+The routers only know the next hop and distance for a destination whole link state protocols have
+detailed view of the network (or parts of it).
+c)* RIP is an interior gateway protocol. Explain the difference to exterior gateway protocols.
+IGPs are used within a single autonomuous system while EGPs are used between autonomuous
+systems.
+d)* T o what extent are networks limited that use solely RIP as routing protocol?
+The maximum hop count for RIP is 15, thus the “diameter” of those networks cannot be larger than
+that.
+– Page 10 / 16 –
+
+--- PAGE 27 ---
+Sample Solution
+e)* Which information is contained in a routing update sent by RIP?
+Solely the reachable destinations and the cost.(In particular not the next hop.)
+f)* Reason whether or not RIP always chooses the shortest path in based on the hop count.
+Y es, hop count is RIP’s sole metric.
+g)* Reason whether or not RIP always chooses the fastest route in terms of bandwidth.
+No, the number of hops does not tell anything about available bandwidth.
+h) Fill in the routing tables in Figure 5.1 (without intermediate steps) such that the tables represent a
+converged state.
+Assume the link between routers D and E fails. Router D obviously recognizes the fail. Answer the following
+questions in the given order.
+i) Router D sends a periodic update. Describe its immediate effect on the other routers.
+C is informed about the fail and will remove the route to E via D.A and B do not receive the update
+from D.
+j) Now, router A sends a periodic update. Describe its immediate effect on the other routers.
+Since A still assumes there is a route to E via C, it is included in the update.B will ignore that since it
+also thinks there is still a route to E via C.
+However, C now wrongly assumes that there is a route to E via A with cost 3 and installs this new
+route.
+k) Describe the problem that will now arise and how it can be solved.
+Count-to-Inﬁnity: the non-existing route to E will circulate between A, B, and C until the tombstone of
+15 is reached.
+Possible solutions include split horizon, poison reverse, and triggered updates (where the latter only
+speed up the process at cost of network trafﬁc).
+0
+1
+0
+1
+0
+1
+0
+1
+2
+3
+0
+1
+2
+0
+1
+2
+3
+0
+1
+2
+– Page 11 / 16 –
+
+--- PAGE 28 ---
+Sample Solution
+0
+1
+2
+3
+4
+5
+6
+7
+Problem 6 DNS (13.5 credits)
+Y ou are the administrator of the notorious darknet site “The Visible Wiki”,
+which hosts a collection of darknet links. Recently , all your servers were
+seized by dollarpol. Y ou could barely escape the authorities, and are
+now in the process of rebuilding the site. As a ﬁrst step, you set up a
+new nameserver at dns.visiblewiki.what. Y ou start by writing a zone
+ﬁle.
+visiblewiki’s logo
+a)* Y ou start with the basics of a DNS zone ﬁle. In the zone ﬁle below (Listing 1), add entries fulﬁlling the
+following tasks. Do not use any record type twice!
+1. A record visiblewiki.what. referencing 131.159.122.12
+2. Make the website at www.visiblewiki.what. reachable. It is hosted on the server at 131.159.122.12
+3. Mail for visiblewiki.what. is also handled by the server at visiblewiki.what. with priority 1.
+$TTL 14400
+$ORIGIN v i s i b l e w i k i . what .
+visiblewiki .w h a t. I N S O A d n s. visiblewiki .w h a t. visiblewiki .w h a t. (
+2024022501 ; s e r i a l Y Y Y Y M M D D x x
+7200 ; r e f r e s h = 4 hrs
+1800 ; r e t r y = 30 min
+604800 ; expire = 7 days
+3600 ; neg cache time = 1 hr
+)
+;T h e C L A S S of a record is set to I N ( for Internet ) for c o m m o n D N S records
+; i n v o l v i n g I n t e r n e t h o s t names , s e r v e r s , o r IP addresses .
+visiblewiki .w h a t. I N N S d n s. visiblewiki .w h a t.
+dns . v i s i b l e w i k i . what . IN A 131.159.122.1
+visiblewiki .w h a t. I N A 131.159.122.12
+www . v i s i b l e w i k i . w h a t . I N CNAME v i s i b l e w i k i . w h a t .
+visiblewiki .w h a t. I N M X 1 visiblewiki .w h a t.
+Correction: 1pt for left column, 0.5pt for type(+prio), 1pt for right column. If trailing dot (fqdn) is missing,
+-0.5pt for each occurrence
+Listing 1: Zone ﬁle for visiblewiki.what
+As you know, the DNS follows a tree structure. Y our domain is part of the what TLD. The zone ﬁle of what.
+therefore has to reference your name server. It contains the following entries:
+[...]
+visiblewiki .w h a t. I N N S d n s. visiblewiki .w h a t.
+dns . v i s i b l e w i k i . what . IN A 131.159.122.1
+[...]
+Listing 2: Part of the what TLD zone ﬁle
+– Page 12 / 16 –
+
+--- PAGE 29 ---
+Sample Solution
+b)* Why are the entries of Listing 2 necessary? Explain the purpose of the A record of Listing 2.
+The A record is a glue record. It is necessary as the name server’s IP is listed in the visiblewiki.what.
+zone ﬁle, but to reach that zone ﬁle, we have to query the nameserver that holds it. T o break the
+bootstrapping cycle, the name server’s IP is listed in the zone above ( what.).
+c)* At this point, you are concerned about the resolvers that query your name server. Describe how a resolver
+differs from a name server and how it interacts with name servers.
+A resolver extracts information from the DNS by iteratively querying name servers. It interacts with our
+name server as soon as information from the zones it is authoritative for is to be extracted.
+d)* As an operator of “The Visible Wiki” you are naturally afraid of the authorities. Can a client querying the
+DNS trust the resolver’s response to be the actual contents of your zone ﬁle? Justify your answer!
+As DNS in its basic form does not provide any authentication or integrity , a client cannot trust the
+responses. If a malicious name server delegates to another malicious name server, the query queries
+a malicious subtree and returns attacker controlled information. Additionally , responses can be
+modiﬁed in-ﬂight by a man-in-the-middle since the messages are unencrypted and unauthenticated.
+Points awarded for any reasonable explanation that is correct. Students might go into details about
+the hierarchy of trust here, or about DNSsec, . . .
+0
+1
+2
+0
+1
+2
+0
+1
+2
+– Page 13 / 16 –
+
+--- PAGE 30 ---
+Sample Solution
+Additional pre-print for Problem 4:
+NRZ 0 t
+s(t)
+1 2 3 4 5 6 7 8 9 10 11 12
+RZ 0 t
+s(t)
+1 2 3 4 5 6 7 8 9 10 11 12
+Manchester 0 t
+s(t)
+1 2 3 4 5 6 7 8 9 10 11 12
+ML T -3 0 t
+s(t)
+1 2 3 4 5 6 7 8 9 10 11 12
+Figure 6.2: Preprint for signals
+Additional space for solutions–clearly mark the (sub)problem your answers are related to and strike
+out invalid solutions.
+– Page 14 / 16 –
+
+--- PAGE 31 ---
+Sample Solution
+– Page 15 / 16 –
+
+--- PAGE 32 ---
+Sample Solution
+– Page 16 / 16 –
+
+--- PAGE 33 ---
+Sample Solution
+Chair of Distributed Systems and Security
+School of Computation, Information and T echnology
+T echnical University of Munich
+Esolution
+Place student sticker here
+Note:
+• During the attendance check a sticker containing a unique code will be put on this exam.
+• This code contains a unique number that associates this exam with your registration
+number.
+• This number is printed both next to the code and to the signature ﬁeld in the attendance
+check list.
+Computer Networking and IT -Security
+Exam: INHN0012 / Retake Date: Wednesday 3rd April, 2024
+Examiner: Prof. Dr.-Ing. Stephan Günther Time: 13:00 – 14:30
+Leander Seidlitz, M.Sc.
+Working instructions
+• This exam consists of 16 pages with a total of 6 problems and a cheatsheet.
+Please make sure now that you received a complete copy of the exam.
+• The total amount of achievable credits in this exam is 93 credits.
+• Detaching pages from the exam is prohibited.
+• Allowed resources:
+– one non-programmable pocket calculator
+– one analog dictionary English → native language
+• Subproblems marked by * can be solved without results of previous subproblems.
+• Answers are only accepted if the solution approach is documented. Give a reason for each
+answer unless explicitly stated otherwise in the respective subproblem.
+• Do not write with red or green colors nor use pencils.
+• Physically turn off all electronic devices, put them into your bag and close the bag.
+Left room from to / Early submission at
+– Page 1 / 16 –
+
+--- PAGE 34 ---
+Sample Solution
+Problem 1 Multiple Choice (18 credits)
+The following subproblems are multiple choice / multiple answer, i. e. at least one answer per subproblem is
+correct. Subproblems with a single correct answer are graded with 1 credit if correct. Those with more than
+one correct answers are graded with 0.5 credit per correct answer and -0.5 credit per wrong answer. Missing
+crosses have no inﬂuence. The minimal amount of credits per subproblem is 0 credits.
+Mark correct answers with a cross !
+T o undo a cross, completely ﬁll out the answer option ↭
+T o re-mark an option, use a human-readable marking !↭
+a)* Which of the following statements regarding layering according to the ISO / OSI model are true?
+The application is Layer 7
+In general, protocols implement functions of
+only one layer
+! The user is not part of the model
+! The Layer 3 SDU is the Layer 4 PDU
+b)* Given a message "AABB ABBB AABB AABA" ↑ {A,B} (spaces added for readability only) from a uniform
+message source, which is the information content of character A?
+0.5 bit ! 1 bit 0.25 bit 2 bit
+c)* Which are interior routing protocols?
+! RIPv2 BGP CSR ! OSPF
+d)* Which of the following statements regarding Layer 2 adresses in IEEE-like protocols are true?
+Can be resolved over the Internet
+! 6B long
+Used for routing over the Internet
+! Compatible between different IEEE standard
+Divided into network and host part
+Uniquely identify a speciﬁc device
+e)* Which of the following statements regarding media access control schemes are true (provided that nodes
+adhere to the standard)?
+Fairness cannot be ensured in wireless net-
+works
+! CSMA/CD ensures fairness
+CSMA/CD is used in wireless networks
+T oken Passing is nondeterministic
+CSMA/CD is deterministic
+! T oken Passing ensures fairness
+f)* Which of the following are Ethernet broadcast addresses?
+bb:bb:bb:bb:bb:bb
+! ff:ff:ff:ff:ff:ff
+00:00:00:00:00:00
+33:33:ff:ff:ff:ff
+g)* Which of the following are valid 802.11 operating modes?
+MDF (Multi-Frequency-Drift) mode
+! ad-hoc mode
+! infrastructure mode
+multicast mode
+h)* What is correct regarding IPv6?
+! Source and Destination address are 128 bits long
+! The IPv6 header including its extension header must always be a multiple of 8 B
+The header contains a CRC32 checksum
+Fragmentation is handled the same way as in IPv4
+– Page 2 / 16 –
+
+--- PAGE 35 ---
+Sample Solution
+i)* NA T. . .
+is equivalent to a ﬁrewall.
+! translates private IPv4 addresses to an external address and back.
+adds 4B overhead to the Ethernet header.
+does not work with IPv4 fragmentation.
+j)* Which of the following are TCP phases?
+! slow start
+congestion control
+! congestion avoidance
+ﬂow control
+k)* Which is the correctly shortened version of the IPv6 address 2001:0db8:0000:0000:0001:0000:0000:0001?
+! 2001:0db8::1:0:0:1 2001:0db8:0:0:1:0:0:1 2001:0db8::1::1
+l)* Which of the following are DNS query types?
+informative query ! recursive query ! iterative query curious query
+m)* Which of the following are DNS record types?
+! A
+SDR
+RPT
+AAAAAA
+! MX
+NSS
+n)* What is true regarding ECC?
+! For a comparable security level the key size is smaller compared to RSA
+ECC algorithms are resistant against quantum computers
+ECC stands for Extreme Curve Cryptography
+The private key is equal to the public key
+o)* Which of the following hash algorithms are vulnerable to length-extension attacks?
+! SHA-512 SHA-224 SHA-384 ! SHA-256
+p)* What are properties of password hash functions?
+! They reduce an arbitrary amount of data to a ﬁxed-length digest
+They are built to be extremely fast
+! They are intentionally slow
+They never fulﬁll the properties of a cryptographic hash function
+q)* Which of the following are stream ciphers?
+AES-CBC ! AES-CTR AES-ECB RSA
+– Page 3 / 16 –
+
+--- PAGE 36 ---
+Sample Solution
+Problem 2 Analog University of Munich [Security and General Questions] (18.5 credits)
+This task is long and has an above average amount of description. It is best to work top to bottom.
+At Analog University of Munich (AUM), most administrative processes are done using forms printed on paper.
+In order to reduce that paper trail, management has decided to digitize many of the processes.
+As usual in public service, you have become part of this transformation without being asked. Y our role is to
+ensure the security and safety of the processes being created.
+a)* Name the ﬁve remaining security goals (in any order) you know from the lecture. Hint: the ﬁrst letters
+form DCAAAC
+1. Data Integrity
+2. Conﬁdentiality
+3. Availability
+4. Authenticity
+5. Accountability
+6. Controlled Access
+b) Mention and describe any two of the goals ( except Availability) in the context of this task.
+Example: Availability: The system for handling grades shall always be accessible to the employees.
+Despite having “Munich” in its name, AUM has multiple locations. One of them is located in Singapore, while
+another is located in Heilbronn. As most processes will function in a digital manner in the future, you need a
+secure communication channel to replace regular mail. Y ou decide on using IPsec.
+Simpliﬁed, each of the locations has a private network, which needs to be connected to the other networks.
+Each network has a border router, which interfaces the (insecure) internet. There is no dedicated line of
+communication between the locations other than the internet.
+– Page 4 / 16 –
+
+--- PAGE 37 ---
+Sample Solution
+c)* Describe the IPsec setup you would install in this scenario. Discuss which network devices IPsec tunnels
+terminate on, as well as how the policy installed looks like (use natural language).
+An IPsec tunnel per location pair exists. The tunnnels terminate at the corresponding border routers.
+The policy secures the trafﬁc destined to each of the locations, that is, trafﬁc that is intended for one of
+the other locations is secured when leaving a location, but trafﬁc for other destinations is not handled
+and routed into the regular internet.
+With the network secured, you analyze a different aspect of the migration: Signatures previously made on
+paper have to be replaced by digital signatures.
+A colleague proposes the following signing scheme:
+hashdocumentdocument
+hash = sha256(document)
+Figure 2.1: The proposed signing scheme as Block Diagram.
+d)* Explain why this scheme (Figure 2.1) does not provide a digital signature.
+The security of this scheme is roughly equivalent to a checksum as there is no secret involved in
+“signing”. It thereby does not provide any data authenticity .
+The same colleague proposes a reworked scheme, based on the assumption that each employee possesses
+a secret key.
+sigdocumentdocument
+sig = sha256(document|key)
+Figure 2.2: The reworked signing scheme. | denotes concatenation.
+– Page 5 / 16 –
+
+--- PAGE 38 ---
+Sample Solution
+e) Compare the security of the new scheme (Figure 2.2) to the previous scheme (Figure 2.1). Discuss
+whether replay attacks are relevant in the context of signed documents, and whether the scheme protects
+against such attacks.
+The scheme introduces a key and thereby provides data authenticity, given the key is secret and
+individual per entity. Replay attacks are relevant as this is basically the difference between a copy and
+the original, between which we cannot distinguish in case of digital documents. The scheme does not
+protect against replay attacks.
+The colleague proposes symmetric pair-wise shared secrets askeybetween each of the parties that have to
+sign and verify documents.
+f)*How many shared secrets are nec-
+essary given there arensuch par-
+ties.Do not justify your answer.
+(n→1)·n
+2
+Clearly , this scheme does not scale for the number of employees of AUM. Therefore, AUM introduces a
+Certiﬁcate Authority (CA), which veriﬁes an employees identity and hands out certiﬁcates. Each entity
+possesses akeypair = (priv_E,pub_E). A certiﬁcate’s data structure is as follows:
+cert = {
+info = {
+Name ,
+valid from ,
+valid until ,
+pub_E ,
+CA p u b l i c k e y
+},
+signature = {
+sign (sha256( info ) , private key C A)
+}
+}
+g)* Draw theblock diagramfor a different signing scheme, using the certiﬁcate (Listing directly above).
+Additionally , provide resistance against replay attacks.
+Draw only the signing process, no veriﬁcation, CA structure, . . . !
+Y ou may use the following functions:enc(data,key), dec(data,key), sign(data,key), verify(data,key),
+sha256(data), time_ms (current time in milliseconds) .|denotes concatenation.
+hdocument h = sha256(document|time_ms) sig = enc(h, priv_E)
+sigdocument
+time_ms
+•Scheme somewhat resembles a signing scheme
+•Scheme provides data authenticity
+•Scheme uses the certiﬁcate infrastructure (== is asymm)
+•Scheme is not replayable
+– Page 6 / 16 –
+
+--- PAGE 39 ---
+Sample Solution
+Problem 3 NAT and static routing (14 credits)
+Wie consider the network depicted in Figure 3.1. PC1 and PC2 are connected via switch S to each other
+and their default gateway R1. The subnets 172.29.79.192 / 27 are being used in the local network. R1 is
+connected to R2 (located at a service provider) over a transport network (/30 preﬁx).
+R1
+S
+PC1
+PC2
+R2
+R3
+www.tum.de
+www.lmu.de
+eth0
+eth0
+eth0
+eth1
+eth2
+eth0
+eth1 eth0
+eth1
+eth2
+eth0
+eth0
+131.159.65.18
+172.29.79.193
+131.159.205.102
+172.29.50.62
+172.29.50.2
+Figure 3.1: Network topology
+a)* Assign PC1 the lowest usable IP address of the local subnet. Write it directly into Figure 3.1.
+b)* Assign R1.eth0 the highest usable IP address of the local subnet. Write it directly into Figure 3.1.
+c)* Assign R1.eth1 a usable address of the transport network. Write it directly into Figure 3.1.
+d)* Which transport layer protocol and destination port will be used if PC1 accesses https://www.tum.de/?
+TCP 443
+We shorten IP and MAC addresses by the scheme <device>.<interface>, e. g. R1.eth0 for the respective
+MAC or IP address at interface eth0 on Router R1.
+R1 supports NA T such that PCs can access the internet. The NA T table of R1 looks as shown in T able 3.1.
+PC2 has already established a connection with hosts on the internet.
+Prot. Local IP Local Port Global IP Global Port Remote IP Remote Port
+tcp 172.29.79.193 53050 R1.eth1 53050 tum.eth0 443
+tcp 172.29.79.193 55222 R1.eth1 55222 lmu.eth0 80
+tcp 172.29.50.2 55222 R1.eth1 55223 tum.eth0 443
+T able 3.1: NA T -T abelle von Router R1
+PC1 now also accesses https://www.tum.de. It thereby chooses the random source port 55222.
+e) Add the corresponding entries in T able 3.1.
+– Page 7 / 16 –
+
+--- PAGE 40 ---
+Sample SolutionNote for the following subproblems that there are 4 additional routers between R2 and R3.
+f) For the request fromPC1tohttps://www.tum.de, add the header ﬁelds at the three indicated positions in the empty tables in Figure 3.2. If a ﬁeld is not
+unique, use a sensible value.Notes:
+•If you were unable to solve Subproblem d), you may use destination port 8080.
+•IP and MAC addresses should be abreviated by<device>.<interface>, e, g.PC2.eth0.
+•The hostname of the server hostingwww.tum.demay be abbreviated bytum.
+R1
+S
+PC1
+PC2
+R2
+R3
+www.tum.de
+www.lmu.de
+eth0
+eth0
+eth0
+eth1
+eth2
+eth0
+eth1 eth0
+eth1
+eth2
+eth0
+eth0
+Src MAC
+PC1.eth0
+Dst MAC
+R1.eth0
+Src IP
+PC1.eth0
+Dst IP
+tum.eth0
+TTL
+63
+Src Port
+55222
+Dst Port
+443
+Src MAC
+R1.eth1
+Dst MAC
+R2.eth0
+Src IP
+R1.eth1
+Dst IP
+tum.eth0
+TTL
+62
+Src Port
+55223
+Dst Port
+443
+Src MAC
+R3.eth1
+Dst MAC
+tum.eth0
+Src IP
+R1.eth1
+Dst IP
+tum.eth0
+TTL
+56
+Src Port
+55223
+Dst Port
+443
+Figure 3.2: Preprint for Subproblem f)
+– Page 8 / 16 –
+
+--- PAGE 41 ---
+Sample Solutiong) For the reply fromtumtoPC1, add the header ﬁelds at the three indicated positions in the empty tables in Figure 3.2. If a ﬁeld is not unique, use a
+sensible value.Notes:
+•IP and MAC addresses should be abreviated by<device>.<interface>, e, g.PC2.eth0.
+•The hostname of the server hostingwww.tum.demay be abbreviated bytum.
+R1
+S
+PC1
+PC2
+R2
+R3
+www.tum.de
+www.lmu.de
+eth0
+eth0
+eth0
+eth1
+eth2
+eth0
+eth1 eth0
+eth1
+eth2
+eth0
+eth0
+Src MAC
+R1.eth0
+Dst MAC
+PC1.eth0
+Src IP
+tum.eth0
+Dst IP
+PC1.eth0
+TTL
+56
+Src Port
+443
+Dst Port
+55222
+Src MAC
+R2.eth0
+Dst MAC
+R1.eth1
+Src IP
+tum.eth0
+Dst IP
+R1.eth1
+TTL
+57
+Src Port
+443
+Dst Port
+55223
+Src MAC
+tum.eth0
+Dst MAC
+R3.eth1
+Src IP
+tum.eth0
+Dst IP
+R1.eth1
+TTL
+63
+Src Port
+443
+Dst Port
+55223
+Figure 3.3: Preprint for Subproblem g)
+– Page 9 / 16 –
+
+--- PAGE 42 ---
+Sample Solution
+Problem 4Wireshark (17.5 credits)
+Consider the Ethernet frame depicted in Figure 4.1. In the following, we will analyze this frame step by step.
+0x0000 00 50 56 00 37 d1 94 f7 ad 4f 08 00 86 dd 60 00
+0x0010 00 00 00 26 06 37 20 03 00 0a 08 7f a4 a7 f0 2b
+0x0020 0c 99 bc 65 10 70 2a 01 04 f9 00 4a 45 89 00 00
+0x0030 00 00 00 10 00 01 9e 7e 00 19 e2 f3 fc 63 09 19
+0x0040 51 40 80 18 00 e0 34 69 00 00 01 01 08 0a bf 7b
+0x0050 27 04 0a 71 cd de 45 48 4c 4f 0d 0a 86 dd 08 00
+(a)(b)
+(c)
+(d)
+(e)
+(e) (f)
+(f)
+(g)
+(h) (i)
+(k) (l)
+Figure 4.1: Ethernet frame including checksums.
+For each of the following subproblems, clearly mark the respective header ﬁelds in Figure 4.1. Take care
+that markings can uniquely be related to individual subproblems, i. e., note the subproblem above
+markings. Answers that cannot be followedwill not be graded.
+a)* Mark the transmitter address of layer 2 in Figure 4.1.
+b)* Mark the receiver address of layer 2 in Figure 4.1.
+c)* Mark the frame check sequence in Figure 4.1.
+d)* What protocol is used as L3 PDU? Mark the respective header ﬁeld in in Figure 4.1.
+IPv6
+e) State the layer 3 source address in its usual and fully abbreviated form.
+2003:a:87f:a4a7:f02b:c99:bc65:1070
+f) State the layer 3 destination address in its usual and fully abbreviated form.
+2a01:4f9:4a:4589:::10:1
+g) What protocol is used as L4 PDU? Mark the respective header ﬁeld in in Figure 4.1.
+TCP
+h) At which offset does the layer 4 PDU start? Give an explicit reason how you determine this offset.
+Offset:0x0036 Reason:Next Header indicates TCP , thus ﬁxed length40 BIPv6 header
+– Page 10 / 16 –
+
+--- PAGE 43 ---
+Sample Solution
+i) What type is the layer 7 protocol probably?
+The source port is an ephemeral port.However, the destination port 25 ( 0x0019 suggests that it is
+SMTP .
+j) For what purpose is that protocol used?
+Mail transfer between MT As.
+k) Determine the offset where the L7 PDU starts. Give an explicit reason how you determine this offset.
+Offset: 0x0042 Reason: Offset = 0x8 ↓ 32 B TCP header
+l) Decode the ﬁrst 5B of the L7 SDU.
+ASCII coded string starting at offset 0x0042: 0x45 0x48 0x4c 0x4f 0x0d 0x0a = EHLO\r\n
+– Page 11 / 16 –
+
+--- PAGE 44 ---
+Sample Solution
+Problem 5 TCP (18 credits)
+We consider the impact of faults in the network on the transport layer. T o that end, we assume the simpliﬁed
+version of TCP Reno introduced in the lecture.
+a)* Brieﬂy explain goal and implementation of TCP’s congestion control.
+Avoid overload within the network by adapting the sender window.
+b)* Brieﬂy explain goal and implementation of TCP’s ﬂow control.
+Avoid overload at the receiver by allowing the receiver to artiﬁcially limit the sender window.
+We now consider a speciﬁc chain of events that inﬂuence the size of the congestion window. Figure 6.1
+shows the size of the congestion window in multiples of the MSS over time in multiples of the RTT . The
+window size after connection establishment initially starts at a size of 1 MSS.
+t/RTT
+wc/MSS
+0 2 4 6 8 10 12 14 16 18 20 22 24 26 28
+0
+2
+4
+6
+8
+10
+12
+14
+16
+18
+20
+CT =6
+3-Dup-ACKs 3-Dup-ACKs
+Timeout
+CT =6
+3-Dup-ACKs 3-Dup-ACKs
+Timeout
+CT =6
+3-Dup-ACKs 3-Dup-ACKs
+Timeout
+CT =6
+3-Dup-ACKs 3-Dup-ACKs
+Timeout
+CT =6
+3-Dup-ACKs 3-Dup-ACKs
+Timeout
+Figure 5.1: Preprint for Subproblems c) and g). An addition preprint can be found at the end of the exam.
+Clearly strike out invalid solutions.
+– Page 12 / 16 –
+
+--- PAGE 45 ---
+Sample Solution
+The maximum bandwith along the path from source to destination is 15 MSS/RTT. Thereby , segment loss
+occurs as soon as this threshold is crossed. For now, we assume that no timeouts occur.
+c)* Draw the evolution of wc for t < 18 RTT in Figure 6.1. Mark / name the events leading to a reduction of
+wc .
+d) Derive the long-term average data rate that can be achieved.
+By counting segments of a whole phase: (8+9+10+11+12+13+14+15+15) MSS
+9 RTT → 11, 89 MSS
+RTT
+Alternatively , by using the TCP formula (see tutorials): n = 3
+8 x2 + 3
+4 x, for x = 16 get n = 108 at a loss rate of ω = 1
+108 .
+Therefore, the time between segment losses is T =
+( x
+2 +1
+)
+· RTT =
+( 16
+2 +1
+)
+RTT =9 RTT.
+The achievable data rate is therefore rTCP = 108 MSS
+9 RTT · (1 ↑ 1
+108 ) → 11, 89 MSS
+RTT .
+At t = 18 RTT a timeout occurs.
+e)* What is the most likely cause for such a timeout?
+All segments or ACKs are lost, i. e., the sender does not get any feedback whether segments have
+arrived.
+f)* In which way does the timeout differ from receiving duplicate acknowledgements?
+Duplicate acknowledgements indicate that some segments still made it to the receiver.
+g) Assuming that there are no more losses after that timeout, complete the evolution of wc in Figure 6.1 for
+t ↔ 28 RTT.
+h)* Describe the problem for TCP Reno if layers 1 – 3 are too unreliable.
+TCP’s congestion control mechanism interprets any kind of segment loss as a result of an overload
+situation.It does not consider the case of randomly lost segments due to transmission errors resulting
+from, for instance, noisy links, collisions etc.
+As a consequence, TCP would decrease wc and thus never utilize the available bandwidth, which is
+the wrong decision in such cases.
+– Page 13 / 16 –
+
+--- PAGE 46 ---
+Sample Solution
+Problem 6 Short questions (7 credits)
+The following subproblems can be solved independently of each other.
+a)* We developed a small chat application written in Python in the lecture. A central line of the event loop
+was: rfd, _, _ = select(rfds, [], [])
+Explain the function / syscall as well as the named parameter and return value.
+• select() watches as set / list of ﬁle descriptors for activity (in that case for becoming available
+for reading).
+• rfds is the list of ﬁle descriptors to be watched.
+• The return value rfd is the list of ﬁle descriptors that became available (for reading).
+b)* Brieﬂy describe the main difference between a hub and a switch.
+Switches forward frames via the port to which the receiver is connected (if there is an entry in the
+switching table).
+Hubs forward frames to all ports except the one via which the frame was received.
+c)* Why are three MAC addresses usually used for IEEE 802.11 (WLAN), but only two MAC addresses for
+IEEE 802.3 (Ethernet)?
+Because the AP is not transparent for WLAN clients, i. h. it must be explicitly addressed as an
+intermediate station between the sender and receiver.
+Switches are transparent to other devices.
+d)* What is source coding?
+Removing redundancy .
+e)* Brieﬂy describe the main difference between CSMA/CD and CSMA/CA.
+CSMA/CA randomizes media access even when the medium is free (ﬁxed contention window with optional backoff interval),
+while CSMA/CD only does this after a collision has occurred.
+Alternative: Because CSMA/CA cannot reliably detect collisions, conﬁrmation is expected on layer 2. With CSMA/CD, on the
+other hand, a frame is considered successfully transmitted if no collision was detected during transmission.
+– Page 14 / 16 –
+
+--- PAGE 47 ---
+Sample Solution
+Additional space for solutions–clearly mark the (sub)problem your answers are related to and strike
+out invalid solutions.
+t/RTT
+wc/MSS
+0 2 4 6 8 10 12 14 16 18 20 22 24 26 28
+0
+2
+4
+6
+8
+10
+12
+14
+16
+18
+20
+CT =6
+3-Dup-ACKs 3-Dup-ACKs
+Timeout
+CT =6
+3-Dup-ACKs 3-Dup-ACKs
+Timeout
+CT =6
+3-Dup-ACKs 3-Dup-ACKs
+Timeout
+CT =6
+3-Dup-ACKs 3-Dup-ACKs
+Timeout
+CT =6
+3-Dup-ACKs 3-Dup-ACKs
+Timeout
+Figure 6.1: Preprint for Subproblems 5 c) and g). Clearly strike out invalid solutions.
+– Page 15 / 16 –
+
+--- PAGE 48 ---
+Sample Solution
+– Page 16 / 16 –
+
+--- PAGE 49 ---
+Sample Solution
+Chair of Distributed Systems and Secuirty
+School of Computation, Information and T echnology
+T echnical University of Munich
+Esolution
+Place student sticker here
+Note:
+• During the attendance check a sticker containing a unique code will be put on this exam.
+• This code contains a unique number that associates this exam with your registration
+number.
+• This number is printed both next to the code and to the signature ﬁeld in the attendance
+check list.
+Computer Networking and IT Security
+Exam: INHN0012 / Endterm Date: Thursday 16th February , 2023
+Examiner: Prof. Dr.-Ing. Stephan Günther Time: 14:00 – 15:30
+Before we proceed with reading the processing instructions, please answer the following questions. This
+information helps us to examine learning success depending on participation in individual lecture components.
+The information is voluntary and not considered for evaluation , i. e., answers to these questions do not
+give credits. In order to exclude any inﬂuence, this page will not be made accessible during the correction.
+a) Did you attend the lecture?
+1 (regularly) 2 (sometimes) 3 (never)
+b) Did you attend the tutorials?
+1 (regularly) 2 (sometimes) 3 (never)
+Working instructions
+• This exam consists of 12 pages with a total of 6 problems and the cheatsheet ditributed with the exam.
+Please make sure now that you received a complete copy of the exam.
+• The total amount of achievable credits in this exam is 90 credits.
+• Detaching pages from the exam is prohibited.
+• Allowed resources:
+– one non-programmable pocket calculator
+– one analog dictionary English → native language
+• Subproblems marked by * can be solved without results of previous subproblems.
+• Answers are only accepted if the solution approach is documented. Give a reason for each
+answer unless explicitly stated otherwise in the respective subproblem.
+• Do not write with red or green colors nor use pencils.
+• Physically turn off all electronic devices, put them into your bag and close the bag.
+Left room from to / Early submission at
+– Page 1 / 12 –
+
+--- PAGE 50 ---
+Sample Solution
+Problem 1 Multiple Choice (18 credits)
+The following subproblems are multiple chouce / multiple answer, i. e., at least one answer per subproblem
+is correct. Subproblems with a single correct answer are graded with 1 credit if correct. Those with more
+than one correct answers are graded with 0.5 credit per correct answer and ↑0.5 credit per wrong answer.
+Missing crosses have no inﬂuence. The minimal amount of credits per subproblem is 0 credits.
+Mark correct answers with a cross !
+T o undo a cross, completely ﬁll out the answer option ↭
+T o re-mark an option, use a human-readable marking !↭
+a)* Which statesments regarding ML T -3 are correct?
+! It is a line code
+It is a channel code
+It is a source code
+One symbols encodes 3 bit
+It is guranteed to be DC-free
+! The spectrum is narrower
+than Manchester
+b)* How many broadcast domains does the network to the right contain?
+3 6 1 5 ! 2 4
+c)* How many collision domains does the network to the right contain?
+! 4 2 3 1 6 5
+d)* Mark the adjacency matrix for the network to the right.
+
+
+1 ↑10 0 0
+10 ↑10 0
+01 ↑10 0
+00 1 ↑10
+00 0 1 ↑1
+
+
+
+
+11000
+10100
+01100
+00110
+00011
+
+
+!
+
+
+01100
+10100
+11010
+00101
+00010
+
+
+e)* Given the distance matrix D for the network to the right. What is the minimum n such that
+Dn = Dn+1 holds?
+n =1
+n =7
+n =4
+n =0
+! n =3
+n =2
+n =6
+n =5
+1
+2
+3
+4
+5
+1
+1
+1
+1
+1
+f)* Given the IP address 192.0.2.42, determine the respective PTR record in DNS.
+! 42.2.0.192.in-addr.arpa.
+192.0.2.42.in-addr.arpa.
+192.0.2.42.
+42.2.0.192.
+There is no PTR record
+Something different
+g)* Which of the following syscalls are usually only used with datagram oriented sockets?
+! sendto()
+! recvfrom()
+send()
+recv()
+bind()
+listen()
+accept()
+connect()
+h)* Given the binary value 10011100 in network byte order. Determine its representation in little endian.
+! 10011100 00111001 11001001 00110110
+– Page 2 / 12 –
+
+--- PAGE 51 ---
+Sample Solution
+i)* Which of the following addresses are not routable in the Internet?
+! 169.254.0.72
+! 172.16.12.1
+142.251.36.174
+129.187.255.109
+131.159.15.24
+9.9.0.1
+j)* Which of the following are valid types of switching?
+! Circuit Switching
+! Message Switching
+Lane Switching
+Parcel Switching
+Package Switching
+Multi-T rack Switching
+k)* What does IHL stand for in the context of IPv4?
+! IP Header Length Integrated Header Length Informative Header Length
+l)* Which of the following protocols do not feature checksums?
+IPv4
+! IPv6
+UDP
+TCP
+! ARP
+Ethernet
+m)* Which of the following are invalid HTTP commands?
+GET
+POST
+HEAD
+! DISCARD
+DELETE
+PUT
+Additional space for solutions–clearly mark the (sub)problem your answers are related to and strike
+out invalid solutions.
+– Page 3 / 12 –
+
+--- PAGE 52 ---
+Sample Solution
+0
+1
+0
+1
+0
+1
+0
+1
+2
+3
+0
+1
+Problem 2 TCP (15 credits)
+In this problem we consider the message exchange between client and server
+when accessing http://cns.net.in.tum.de.
+a)* A server receives both a UDP datagram and a TCP segment from the same source address. Both feature
+the same port number as their source port. Is this a problem?
+No, as the server and client can differentiate based on the L4 protocol.
+b)* Justify which port number will be used as source port by the client? Assume the client is an unprivileged
+process.
+An (unused) port number ranging from 1024 to 65 535 (ephemeral port).
+c)* Justify which port number will be used as destination port by the client?
+Port 80 (well-known port for HTTP)
+d)* Sketch the connection establishment in the chart below. For each segment exchanged between client
+and server, state the SEQ and ACK numbers, the segment length (LEN), and relevent ﬂags that are set.
+Client Server
+SEQ=0, ACK=0, LEN=0, [SYN]
+SEQ=0, ACK=1, LEN=0, [SYN|ACK]
+SEQ=1, ACK=1, LEN=0, [ACK]
+e) What is the payload (protocol and type, action, or method) of the next segment sent by the client?
+HTTP GET (requesting cns.net.in.tum.de)
+– Page 4 / 12 –
+
+--- PAGE 53 ---
+Sample Solution
+The segment sent in Subproblem e) has a payload of 81 B, followed by a response of length 370 B by the
+server.
+f) Draw the message exchange so far assuming that the MSS is not exceeded for individual segments.
+Client Server
+SEQ=1, ACK=1, LEN=81, [ACK]
+SEQ=1, ACK=82, LEN=371, [ACK]
+SEQ=82, ACK=371, LEN=0, [ACK]
+After that, the connection termination is initiated by the client and completed from both sides.
+g)* Draw the message exchange during termination.
+Client Server
+SEQ=82, ACK=371, LEN=0, [FIN|ACK]
+SEQ=371, ACK=82, LEN=0, [FIN|ACK]
+SEQ=83, ACK=372, LEN=0, [ACK]
+The reply from the server in Subproblem f) has the following text content:
+HTTP/1.1 301 Moved Permanently
+Server: nginx/1.18.0
+Date: Thu, 02 Feb 2023 10:55:24 GMT
+Content-Type: text/html
+Content-Length: 169
+Connection: keep-alive
+Location: https://cns.net.in.tum.de/
+(...)
+h)* What does the response mean?
+In particular, the response code 301 means that the destination is no longer available but a redirect
+exists.
+In that case, the redirect is simply to https://..., i. e., making the website reachable via unsecured
+HTTP by immediately redirecting to a TLS-based connection.
+0
+1
+2
+3
+0
+1
+2
+3
+0
+1
+2
+– Page 5 / 12 –
+
+--- PAGE 54 ---
+Sample Solution
+0
+1
+0
+1
+0
+1
+0
+1
+2
+Problem 3 DNS (13.5 credits)
+·
+de com net
+tele root-serversgtld-serverstumlrz nic
+ns www a mfdns1 cit
+www
+182.100.142.191
+www2
+131.159.20.1
+dns
+131.159.0.99
+mail
+131.159.2.74
+Figure 3.1: A part of the DNS.
+a) Brieﬂy describe the purpose of DNS.
+The mapping between FQDN and IP addresses.
+b) Brieﬂy describe the difference between a fully and non-fully qualiﬁed domain name.
+A fully qualiﬁed domain name starts at the root, denoted by the “. ”.
+A non-fully qualiﬁed domain name starts at an intermediary node of the DNS.
+Figure 3.1 shows the zone ﬁle of the authoritative name server for cit.tum.de.
+1$ O R I G I N c i t . t u m . d e .
+2$ T T L 1 H
+3
+4@ I NS O Ad n s . c i t . t u m . d e .h o s t m a s t e r . c i t . t u m . d e .( . . . )
+5
+6c i t . t u m . d e . I N N S dns.cit.tum.de.
+7c i t . t u m . d e . I N M X 20 mail.cit.tum.de.
+8
+9d n s . c i t . t u m . d e . I N A 131.159.0.99
+10 mail . cit . tum . de . IN A 131.159.2.74
+11 www . cit . tum . de . IN A 182.100.142.191
+12 www2 . cit . tum . de . IN A 131.159.20.1
+Figure 3.2: DNS zone ﬁle on nameserver dns.cit.tum.de
+c)* Add the mail server mail.in.tum.de to the zone ﬁle given in Figure 3.2 based on the information from
+Figure 3.1 and assign it preference 20.
+d)* Add all other missing records in Figure 3.2 based on the information from Figure 3.1.
+– Page 6 / 12 –
+
+--- PAGE 55 ---
+Sample Solution
+e)* What purpose does the TTL of 1h in the DNS zone ﬁle serve?
+A resolver might cache the result for the amount of time speciﬁed in the TTL.After the time has expired
+it must query the authoritative nameservers again.
+f)* What purpose does a zone transfer serve?
+The zone ﬁle is synchronized onto secondary nameservers, which are authoritative for the same zone
+so that the latter have the up to date information.
+g)* What does “authoritative” mean in the context of DNS?
+An authoritative nameserver for a zone holds the zone records for this zone and answers queries it.
+h)* When does DNS use TCP instead of UDP?
+When the request is larger than 512 B.
+i)* How is the administrator of dns.cit.tum.de. ensured that no malicious server answers the requests for
+their zone, assuming that man-in-the-middle attacks are not possible.
+The root nameservers serve as a root of trust, as a resolver knows their IP addresses without querying
+the DNS.Starting at the root nameservers, only nameservers that are contained in the zone ﬁles will
+be contacted.Therefore, assuming the root is trusted, only trusted servers are contacted.An untrusted
+nameserver is therefore never contacted as no server points to it.
+j) Explain the difference between recursive and iterative name resolution.
+With recursive resolution, only one request for a resource record is made to a conﬁgured resolver,
+which returns the ﬁnal response.
+With iterative resolution, the FQDN is instead resolved starting at the root zone (or the last known
+SOA) by querying the authoritative name servers for the respective zones.Their answers contain either
+the FQDN of an authoritative name server of the next lower zone or the ﬁnal resource record if the
+queried name server is authoritative for it.
+0
+1
+0
+1
+0
+1
+0
+1
+0
+1
+2
+0
+1
+2
+– Page 7 / 12 –
+
+--- PAGE 56 ---
+Sample Solution
+0
+0
+0
+0
+1
+0
+1
+0
+1
+0
+1
+2
+0
+1
+2
+Problem 4 Wireshark (15.5 credits)
+Consider the Ethernet frame depicted in Figure 4.1. In the following, we will analyze this frame step by step.
+0x0000 04 7b cb b7 08 00 3c a6 2f 78 08 00 08 00 45 00
+0x0010 00 5d 9c 42 40 00 36 06 54 a0 83 9f 0f 0c c0 a8
+0x0020 08 00 00 16 8e 6a aa 92 9a 6f 23 7a 28 7a 80 18
+0x0030 03 fa 25 15 00 00 01 01 08 0a 89 c1 b0 62 9f ea
+0x0040 77 60 53 53 48 2d 32 2e 30 2d 4f 70 65 6e 53 53
+0x0050 48 5f 37 2e 39 70 31 20 44 65 62 69 61 6e 2d 31
+0x0060 30 2b 64 65 62 31 30 75 32 0d 0a 42 0a f1 73
+(a)(b)
+(c)
+(d)
+(e) (f)
+(e)
+(g)
+(h)
+(h)
+(i)
+(k) (l)
+Figure 4.1: Ethernet frame including checksums.
+For each of the following subproblems, clearly mark the respective header ﬁelds in Figure 4.1. Take care
+that markings can uniquely be related to individual subproblems , i. e., note the subproblem above
+markings. Answers that cannot be followed are not graded .
+a)* Mark the transmitter address of layer 2 in Figure 4.1.
+b)* Mark the receiver address of layer 2 in Figure 4.1.
+c)* Mark the frame check sequence in Figure 4.1.
+d)* What protocol is used as L3 PDU? Mark the respective header ﬁeld in in Figure 4.1.
+IPv4
+e) State the layer 3 source address in its usual and fully abbreviated form.
+131.159.15.12
+f) State the layer 3 destination address in its usual and fully abbreviated form.
+192.168.8.0
+g) What protocol is used as L4 PDU? Mark the respective header ﬁeld in in Figure 4.1.
+TCP
+h) At which offset does the layer 4 PDU start? Give an explicit reason how you determine this offset.
+Offset: 0x0022 Reason: IHL = 0x5 ↓ 20 B IP header / no options
+– Page 8 / 12 –
+
+--- PAGE 57 ---
+Sample Solution
+i) What type is the layer 7 protocol probably?
+The destination port is an ephemeral port.However, the source port 22 suggests that it is SSH.
+j) For what purpose is that protocol used?
+Encrypted remote control of computers.
+k) Determine the offset where the L7 PDU starts. Give an explicit reason how you determine this offset.
+Offset: 0x0042 Reason: Offset = 0x8 ↓ 32 B TCP header
+l) Decode the ﬁrst 5B of the L7 SDU.
+ASCII coded string starting at offset 0x0042: 0x53 0x53 0x48 0x2d 0x32 = SSH-2
+Problem 5 Short Questions: Security (20 credits)
+a)* Differentiate Authentication from Authorization.
+Authentication is the process of proving an entities identity .
+Authorization determines which privileges an entity has.
+b)* Why are so-called hybrid encryption schemes employed? Describe the function of such scheme, and
+why each component is used.
+In such scheme, an asymmetric scheme is used to establish a secret. This solves the problem of not
+having a shared secret in the beginning as a key can be encrypted with the receiver’s public key and
+only the receiver can decrypt it using its private key .
+After key establishment, a symmetric scheme is used. This is as symmetric ciphers have a higher
+throughput as they are cheaper to calculate.
+0
+1
+2
+0
+1
+0
+1
+2
+0
+1
+2
+0
+1
+2
+0
+1
+2
+– Page 9 / 12 –
+
+--- PAGE 58 ---
+Sample Solution
+0
+1
+2
+3
+0
+1
+2
+3
+0
+1
+2
+0
+1
+c)* Name and describe the three properties of a cryptographic hash function.
+1. Pre-Image Resistance:
+Given a hash value, it is hard to ﬁnd an input that results in the same hash.
+2. Second Pre-Image Resistance:
+Given a message, it is difﬁcult to ﬁnd another input that results in the same hash.
+3. Collision Resistance:
+It is difﬁcult to ﬁnd a pair of two different messages that result in the same hash.
+d)* Sketch a simple scheme for signing data. Sketch only the signature generation!
+Use the block diagrams you know from the lecture. Y ou do not need to reason your answer.
+Y ou can use the cryptographic hash function H(x) and assume the signing party to possess a key pair
+(key_priv, key_pub) . For encrypting and decrypting you may use aenc(key, msg) , adec(key, msg) as well
+as enc(key, msg) and dec(enc, msg) .
+hData H(data) enc(priv_A, h)
+SigData
+• General idea makes sense and reﬂects a signature scheme
+• Signature cannot be forged without secret (= not a checksum)
+• Signature is only over the hash of the message (= efﬁcient to calculate)
+e)* Describe the tasks and responsibilities of a Certiﬁcation Authority (CA) and Registration Authority (RA).
+A CA is responsible to issue the certiﬁcate for the requesting entity after the RA has checked the
+entities identity and relayed the request to the CA.
+f)* Why is the usage of true randomness for cryptographic purposes important.
+A predictable random number generator results in lower entropy , leading to weaker or even broken
+keys / encrypted material. Keys and cypher streams might thus become predictiable.
+– Page 10 / 12 –
+
+--- PAGE 59 ---
+Sample Solution
+g)* Differentiate AH from ESP in the context of IPsec.
+ESP offers conﬁdentiality , authenticity as well as integrity protection for its own headers and the IPsec
+payload.
+AH only offers authenticity and integrity protection, but additionally for the preceding IP header.
+h)* What problem does IPsec pose to NA T , and how does NA T -T solve it?
+Since IPsec encrypts the layer 4 header, the port numbers cannot be used for NA T . Therefore, a
+dummy UDP header is inserted which only serves the purpose of traversing the NA T .
+i)* Describe the properties offered by a cryptographic scheme implementing Perfect Forward Secrecy (PFS).
+A cryptography scheme provides Perfect Forward Secrecy (PFS) if previously encrypted sessions
+maintain their conﬁdentiality in the scenario that the long-term secret, the current session keys, and all
+sessions’ trafﬁc become known to an attacker.
+j)* What main drawback does the usage of AES-ECB come with?
+The same plain text results in the same cipher text. Therefore, patterns in the plain text propagate into
+the cipher text.
+k)* Describe how a length-extension attack against Merkle-Damgård-based hash functions works.
+A Merkle-Damgård based scheme outputs the entire internal state of the hash function as digest.
+Therefore, the digest can be loaded back into the hash function, and further blocks be hashed. This
+allows breaking e. g. the signature scheme sig=hash(key|msg).
+0
+1
+2
+0
+1
+0
+1
+0
+1
+0
+1
+2
+– Page 11 / 12 –
+
+--- PAGE 60 ---
+Sample Solution
+0
+1
+0
+1
+0
+1
+2
+3
+0
+1
+0
+1
+2
+Problem 6 Short Questions: General Knowledge (8 credits)
+a)* What are well-known ports?
+TCP/UDP ports with port numbers smaller than 1024.
+b)* What is a major advantage of OSPF over RIP?
+OSPF has knowledge of the network topology , therefore it can detect loops.
+c)* Assume a channel with a bandwidth of 35 MHz. Calculate the maximum data rate given a signal to noise
+ratio of 45 dB.
+SNRdB = 10 log10 SNR ↓ SNR = 10
+45
+10 = 104.5
+rmax = B log2 (1+ SNR) bit
+= 35 · 106Hz log2
+(
+1 + 104.5)
+bit
+↔ 523.2 Mbit/s
+d)* Which purpose does ARP serve?
+Resolution of layer 2 addresses to layer 3 addresses.
+e)* A time-continuous signal with unknown properties, whose signal level varies in the interval [-3, 3), shall
+be digitized such that the quantitization error is minimal. The resulting signal levels are encoded using 2 bit.
+Determine the signal levels and the maximum quantization error in the given interval.
+• 2 bit ↓ N =4 signal levels
+• Level width ∆ = b→a
+N = 3
+2
+• Maximum quantization error emax = ∆
+2 = 3
+4
+• Signal levels: ↑2.25, ↑0.75, 0.75, 2.25
+– Page 12 / 12 –
+
+--- PAGE 61 ---
+Sample Solution
+Chair of Distributed Systems and Security
+School of Computation, Information and T echnology
+T echnical University of Munich
+Esolution
+Place student sticker here
+Note:
+• During the attendance check a sticker containing a unique code will be put on this exam.
+• This code contains a unique number that associates this exam with your registration
+number.
+• This number is printed both next to the code and to the signature ﬁeld in the attendance
+check list.
+Computer Networking and IT Security
+Exam: INHN0012 / Retake Date: Thursday 6th April, 2023
+Examiner: Prof. Dr.-Ing. Stephan Günther Time: 14:00 – 16:00
+I
+II
+P1 P2 P3 P4 P5 P6
+Before we proceed with reading the processing instructions, please answer the following questions. This
+information helps us to examine learning success depending on participation in individual lecture components.
+The information is voluntary and not considered for evaluation , i. e., answers to these questions do not
+give credits. In order to exclude any inﬂuence, this page will not be made accessible during the correction.
+a) Did you attend the lecture?
+1 (regularly) 2 (sometimes) 3 (never)
+b) Did you attend the tutorials?
+1 (regularly) 2 (sometimes) 3 (never)
+Working instructions
+• This exam consists of 16 pages with a total of 6 problems and the cheatsheet ditributed with the exam.
+Please make sure now that you received a complete copy of the exam.
+• The total amount of achievable credits in this exam is 90 credits.
+• Detaching pages from the exam is prohibited.
+• Allowed resources:
+– one non-programmable pocket calculator
+– one analog dictionary English → native language
+• Subproblems marked by * can be solved without results of previous subproblems.
+• Answers are only accepted if the solution approach is documented. Give a reason for each
+answer unless explicitly stated otherwise in the respective subproblem.
+• Do not write with red or green colors nor use pencils.
+• Physically turn off all electronic devices, put them into your bag and close the bag.
+Left room from to / Early submission at
+– Page 1 / 16 –
+
+--- PAGE 62 ---
+Sample Solution
+Problem 1 Multiple Choice (14 credits)
+The following subproblems are multiple chouce / multiple answer, i. e., at least one answer per subproblem
+is correct. Sub problems with a single correct answer are graded with 1 credit if correct. Those with more
+than one correct answers are graded with 0.5 credit per correct answer and ↑0.5 credit per wrong answer.
+Missing crosses have no inﬂuence. The minimal amount of credits per subproblem is 0 credits.
+Mark correct answers with a cross !
+T o undo a cross, completely ﬁll out the answer option ↭
+T o re-mark an option, use a human-readable marking !↭
+a)* How many broadcast domains does the network to the right contain?
+3 ! 6 1 5 2 4
+b)* How many collision domains does the network to the right contain?
+4 2 3 1 ! 6 5
+c)* Mark the adjacency matrix for the network to the right.
+
+
+1 ↑10 0 0
+10 ↑10 0
+01 ↑10 0
+00 1 ↑10
+00 0 1 ↑1
+
+
+
+
+11000
+10100
+01100
+00110
+00011
+
+
+!
+
+
+01100
+10100
+11010
+00101
+00010
+
+
+d)* Given the distance matrix D for the network to the right. What is the minimum n such that
+Dn = Dn+1 holds?
+n =1
+n =7
+n =4
+n =0
+! n =3
+n =2
+n =6
+n =5
+1
+2
+3
+4
+5
+1
+1
+1
+1
+1
+e)* Assume that Bob and Alice know each others public key . What is the
+scheme on the right vulnerable to?
+Eve can impersonate Bob
+! No forward-secrecy
+Man-in-the-Middle and thereby
+full message decrypt
+! Replay Attacks
+Alice Bob
+c=enc(m, pub_bob)
+m=dec(c, priv_bob)
+c=enc(n, pub_alice)
+n=dec(m, priv_alice)
+c
+c
+f)* Which three of the following claims are true?
+In AES-CBC, later blocks inﬂuence previous
+ones
+ECC is robust against quantum computers
+RSA is robust against quantum computers
+! AES is robust against quantum computers
+Common key lengths for AES are 2048 bit and
+4096 bit
+! SHA-256 is vulnerable to length-extension at-
+tacks
+! Cipher text blocks in AES-ECB can be cut and
+pasted unnoticeable
+SHA-3 is vulnerable to length-extension attacks
+– Page 2 / 16 –
+
+--- PAGE 63 ---
+Sample Solution
+g)* What is the AES-CTR scheme?
+A hash function A block cipher ! A stream cipher A key exchange
+h)* A chain of trust is used in. . .
+T rusted fourth parties
+! T rusted computing
+T rusted Memory
+Y our trusted bike lock
+i)* The domain name system. . .
+has a mapping from every single IP address to
+a domain name
+! translates domain names to IP addresses
+is inherently trustworthy
+has a single, central authority
+j)* The congestion avoidance phase of TCP Reno. . .
+! increases the trafﬁc control window linearly
+is the ﬁrst phase active in a new connection
+increases the trafﬁc control window exponen-
+tially
+follows the rapid start phase
+k)* In 802.11. . .
+! management frames are unprotected when us-
+ing WEP
+trafﬁc cannot be sniffed by attacker when not
+in line of sight
+only two layer 2 addresses are contained in the
+header
+arbitrary errors are corrected using the FCS
+(Frame Correction Sum)
+– Page 3 / 16 –
+
+--- PAGE 64 ---
+Sample Solution
+0
+1
+2
+0
+1
+2
+0
+1
+0
+1
+2
+3
+Problem 2 Short Questions: Security (14 credits)
+a)* Differentiate Authentication from Authorization.
+Authentication is the process of proving an entities identity .
+Authorization determines which privileges an entity has.
+b) Argue whether an man-in-the-middle attacker can be passive and/or active. Describe a scenario for each
+applicable property .
+A MitM attacker can be both, active and passive.
+An attacker eavesdropping on trafﬁc would be passive, while actively replaying trafﬁc puts them into
+an active position(for explanation).
+c) How is a password hash function different from SHA-256?
+A password hash function is built to be intentionally slow/expensive to calculate, thereby hindering
+brute-force attacks.
+d)* Name and describe the three properties of a cryptographic hash function.
+1. Pre-Image Resistance:
+Given a hash value, it is hard to ﬁnd an input that results in the same hash.
+2. Second Pre-Image Resistance:
+Given a message, it is difﬁcult to ﬁnd another input that results in the same hash.
+3. Collision Resistance:
+It is difﬁcult to ﬁnd a pair of two different messages that result in the same hash.
+– Page 4 / 16 –
+
+--- PAGE 65 ---
+Sample Solution
+e) Brieﬂy describe a scenario in which the IPsec tunnel mode is used.
+A company connects two of its sites (and therefore the two networks) over the public internet.
+f) Differentiate a block cipher from a stream cipher.
+A block cipher encrypts entire blocks of data, the plain text has to be padded to a multiple of the block
+length.
+In contrast, a stream cipher generates a key-stream using the underlying block cipher, and can
+therefore be used to encrypt data byte-wise.
+g) Differentiate symmetric encryption from asymmetric encryption. Elaborate on the usage of keys.
+Asymmetric encryption uses a key pair, consisting of private and public key , to encrypt and decrypt
+data. Data that has been encrypted using the public key can only be decrypted using the private key ,
+and vice-versa.
+Symmetric encryption is based on a shared secret — the same key is used for encryption and
+decryption.
+h) Describe three functions of a TPM.
+• A hardware random number generator
+• A way to generate and store keys on the TPM without them ever leaving it
+• A way to attest (= identify) a system based on the hardware and software running
+• Using the TPM keys to encrypt/decrypt and sign data
+• It can be asked to store keys, such as disk encryption keys
+• The TPM usually is a separate hardware on the motherboard
+• The root key of the TPM is burned into the hardware during production
+0
+1
+0
+1
+0
+1
+2
+0
+1
+2
+– Page 5 / 16 –
+
+--- PAGE 66 ---
+Sample Solution
+0
+1
+0
+1
+0
+1
+0
+1
+2
+0
+1
+0
+1
+Problem 3 CRC (14 credits)
+In this problem we consider the binary message 00100110 which should be protected by a CRC as we
+introduced it for Ethernet-based networks in the lecture. We assume the reduction polynomial r(x)= x2 +1 .
+a)* Brieﬂy explain what CRC is used for in the context of Ethernet.
+Detection of bit errors at the receiving node.
+b)* What is the reduction polynomial being used for?
+Mapping of a message of arbitrary length to a ﬁxed length checksum.
+c)* What does it mean if the reduction polynomial is irreducible.
+It cannot be represented as the product of two other polynomials of degree strictly less than deg r(x).
+d)* Reason whether or not CRC requires an irreducible reduction polynomial.
+It does not: using an irreducible reduction polynomial leads to ﬁnite ﬁeld. However, the purpose of
+CRC is primarily error detection.Reduible polynomials may have desireable properties such as being
+able to detect all bit errors of odd length if the factor (x + 1) is contained in the reduction polynomial.
+e)* Show whether or not r(x) is irreducible.
+r(x)= x2 +1=( x + 1)2 ↓ it is reducible
+f)* Assuming Ethernet, what is the reaction of the receiving node when a bit error is detected.
+The frame is dropped without further action.
+– Page 6 / 16 –
+
+--- PAGE 67 ---
+Sample Solution
+g)* Determine the CRC checksum for the given message (see beginning of the problem).
+00100110 00 : 101 = 101101
+101||| ||
+---||| ||
+00111| ||
+101| ||
+---| ||
+0100 ||
+101 ||
+--- ||
+001 00
+1 01
+- --
+1
+Checksum is 01.
+h) Explicitly state the transmitted message.
+00100110 01
+Let us assume a different message (including its checksum): 111011010010111001. Assume that this
+message is transmitted and arrives as 111011010010111100 at the receiver.
+i)* Argue whether or not the error is being detected.
+It is not detected sind the error is 101, which is a multiple of the reduction polynomial.
+0
+1
+2
+3
+4
+0
+1
+0
+1
+2
+– Page 7 / 16 –
+
+--- PAGE 68 ---
+Sample Solution0
+0
+1
+Problem 4 Wireshark (19 credits)
+We consider the network topology depicted in Figure 4.1. The PC tries to establish an SSH connection via
+IPv4 to the server SRV . The MAC and IP addresses of the devices’ interfaces are given.
+Internet
+PC SW R1 R2 SRV
+04:7b:cb:b7:08:00
+192.168.0.8
+3c:a6:2f:78:08:00
+192.168.0.254
+04:7b:cb:b7:08:01
+95.157.26.64
+f8:52:fb:84:4d:ee
+131.159.252.145
+34:3a:f7:18:d0:6c
+131.159.20.254
+04:7b:cb:b7:08:01
+131.159.20.214
+Figure 4.1: Network topology
+We consider the frame sent from R1 to the PC as depicted in Figure 4.1, which is the ﬁrst message from
+SRVafterthe TCP handshake has completed.
+In the following we want to derive thehexdump of that framebased on the information given in Figure 4.1
+and the following subproblems. Fill in the contents step by step in Figure 4.2. Make sure to mark to which
+subproblem your solution belongs, e. g. by using colors or writing the respective subproblem above
+your solution. As an example, the L2 receiver address is already ﬁlled as answer to some (not existing)
+Subproblem x).
+Notes:There may be some gaps in the ﬁnal hexdump as we do not derive all contents of that frame. The
+cheatsheet handed out together with this exam contains any headers and translations you need.
+0x00 04 7b cb b7 08 00 3c a6 2f 78 08 00 08 00 45
+0x10 06 a0 83 9f 14 d6 c0 a8
+0x20 00 08 00 16 8e 6a 8?
+0x30
+0x40 53 53 48 2d 32
+0x50
+0x60 42 0a f1 73
+0x00 04 7b cb b7 08 00
+0x10
+0x20
+0x30
+0x40
+0x50
+0x60
+(x) end of L2
+end of L3
+end of L4
+end of frame
+(a) (b)
+(d)
+(e)
+(f) (g)
+(g)
+(h)
+(i) (j) (1k<x<64k) (k)
+(l)
+Figure 4.2: Preprint for the frame’s hexdump
+a)* Fill in the transmitter address of layer 2 in Figure 4.2.
+b)* Fill in the value of the ﬁeld specifying the type of the L3 PDU in Figure 4.2.
+– Page 8 / 16 –
+
+--- PAGE 69 ---
+Sample Solution
+Before we continue to ﬁll out the hexdump, we want to mark the end of different headers. Assume that
+• the L3 header does not use any options,
+• the L4 header uses 12 B options, and
+• the total frame length (including checksum) is 111 B.
+c)* Mark the end of the L3 and L4 headers as well as of the frame iteself in Figure 4.2. As an example,
+the end of the L2 header is already marked.
+d) Fill in the frame check sequence given as 42 0a f1 73 in Figure 4.2.
+We now start with ﬁlling in different ﬁelds of the L3 header. The start of the L3 header is already given in
+Figure 4.2. Do not forget to mark to which subproblem your ﬁll ins belong.
+e)* Fill in the ﬁeld specifying type and length of the L3 header.
+f)* Fill in the L3 source address.
+g)* Fill in the L3 destination address.
+h)* Fill in the value of the ﬁeld specifying the type of the L3 SDU.
+We now continue with ﬁlling in different ﬁelds of the L4 header. In case a value is not deﬁned, make a
+reasonable assumption. Do not forget to mark to which subproblem your ﬁll ins belong.
+i) Fill in the source port.
+j) Fill in the destination port.
+k) Fill in the value of the ﬁeld specifying that offset in the L4 header.
+Finally , we come the application layer of the frame’s content which is the ASCII encoded string
+“SSH-2.0-OpenSSH_9.2p1 Debian-2 ”.
+l) Fill in the ﬁrst 5B of the L7 PDU.
+e)
+f)
+g)
+h)
+i)
+j)
+k)
+What is the purpose of this problem?
+In this problem students show that they understood
+• how frames are made up of headers of different leayers,
+• how the beginning/end and type of headers are determined, and
+• how MAC and IP addresses are used for addressing.
+In addition, they demonstrate that they understood the purpose of MAC and IP addresses as well the basic
+concept of NA T .
+The problem is an exact copy from the CNS Endterm 2023. The only difference is that we do not parse the
+given hexdump, but create the hexdump from information given in the problem statement.
+Given the cheatsheet belonging to this exam, there is no need to remember any speciﬁc header layouts.
+0
+1
+2
+3
+0
+"
+0
+1
+0
+1
+2
+0
+1
+2
+0
+1
+0
+1
+2
+0
+1
+2
+0
+1
+2
+0
+1
+2
+– Page 9 / 16 –
+
+--- PAGE 70 ---
+Sample Solution
+0
+1
+0
+1
+0
+1
+2
+3
+Problem 5 DNS (13 credits)
+·
+de com net
+tele root-serversgtld-serverstumlrz nic
+ns www a mfdns1 cit
+www
+182.100.142.191
+www2
+131.159.20.1
+dns
+131.159.0.99
+mail
+131.159.2.74
+Figure 5.1: A part of the DNS.
+a) Brieﬂy describe the purpose of DNS.
+The mapping between FQDN and IP addresses.
+b) Brieﬂy describe the difference between a fully and non-fully qualiﬁed domain name, also regarding their
+notation.
+A fully qualiﬁed domain name starts at the root, denoted by the “. ”.
+A non-fully qualiﬁed domain name starts at an intermediary node of the DNS.
+Figure 5.1 shows the zone ﬁle of the authoritative name server for cit.tum.de.
+1$ O R I G I N c i t . t u m . d e .
+2$ T T L 1 H
+3
+4@ I NS O Ad n s . c i t . t u m . d e .h o s t m a s t e r . c i t . t u m . d e .( . . . )
+5
+6
+7 mail.cit.tum.de. IN A 131.159.2.74
+8 www2.cit.tum.de. IN A 131.159.20.1
+9 dns.cit.tum.de. IN A 131.159.0.99
+10 www.cit.tum.de. IN A 182.100.142.191
+11 cit.tum.de. IN MX 20 mail.cit.tum.de
+12 cit.tum.de. IN NS dns.cit.tum.de
+Figure 5.2: DNS zone ﬁle on nameserver dns.cit.tum.de
+c)* Add all other missing data in the zone ﬁle depicted in Figure 5.2 based on the information from Figure 5.1.
+– Page 10 / 16 –
+
+--- PAGE 71 ---
+Sample Solution
+d)* Distinguish a resolver from a nameserver.
+A resolver is contacted by a client to query the DNS. The resolver then contacts the authoritative
+nameservers of the zones in order to extract the requested information.
+e)* Brieﬂy describe the purpose of a zone’s SOA record.
+The SOA (Start of Authority) record deﬁnes the root of the zone, as well as the authoritative name-
+server.
+f)* What does “authoritative” mean in the context of DNS?
+An authoritative nameserver for a zone holds the zone records for this zone and answers queries it.
+g)* Determine the PTR record of the address 11.42.43.12. Y ou do not need to reason your answer.
+12.43.42.11.in-addr.arpa.
+h)* Describe the components of the url https://www.cit.tum.de/webmail?user=user&pwd=pass.
+1. https: the protocol is TLS secured HTTP
+2. www.cit.tum.de: domain name
+3. /webmail: path requested on the server
+4. user=user&pwd=pass: URL parameters / variables, probably a login
+i) Explain the difference between recursive and iterative name resolution.
+With recursive resolution, only one request for a resource record is made to a conﬁgured resolver,
+which returns the ﬁnal response.
+With iterative resolution, the FQDN is instead resolved starting at the root zone (or the last known
+SOA) by querying the authoritative name servers for the respective zones.Their answers contain either
+the FQDN of an authoritative name server of the next lower zone or the ﬁnal resource record if the
+queried name server is authoritative for it.
+0
+1
+0
+1
+0
+1
+0
+1
+0
+1
+2
+0
+1
+2
+– Page 11 / 16 –
+
+--- PAGE 72 ---
+Sample Solution
+0
+1
+2
+0
+1
+2
+0
+1
+2
+3
+Problem 6 Side-Channel Information Stealing (16 credits)
+Y ou have breached the data center of a large cloud hosting provider. Y ou intend to extract their private key
+of 4096 bit length. The key is derived from perfect, uniform randomness. As a very strict network policy is
+employed there is no way you will be able to do this via the network.
+Therefore, you have come up with another way: The cloud hosting provider streams their data center via a
+live cam (24 frames per second), seemingly to show off their hardware. This stream includes a view of the
+hard drive activity LED of the relevant server. Y ou can control the LED — and decide to extract the private
+key by encoding it through LED blink patterns, which you can decode by viewing the live stream.
+a)* What is the maximum data rate achievable on the channel?
+The LED has two states: on and off. Therefore, each frame shows one of two symbols. Each state
+therefore encodes log2 2=1 bit.
+We can detect a different state with each new frame, therefore the maximum channel rate is 24
+symbols per second.
+This results in a maximum data rate of r = 24 bit/s.
+T o properly detect the LED being on or off, a pulse length of at least 100 ms is needed.
+b) What is the resulting transmission rate? How long does it take to transmit the private key?
+We can transmit 1s
+100 ms = 10 symbols per second, therefore have a transmission rate of 10 bit/s.
+It takes 4096/10 ↔ 409.6 s to transmit the key .
+There is still one problem remaining: you have to properly synchronize the transmission on sender and
+receiver side. T o achieve this you decide to employ a new 8b11b coding scheme. In this scheme, 8 bit of
+payload are coded to 11 bit of channel word. The coding transforms a byte to a channel word by prepending
+a start sequence, thereby marking the start of each channel word recognizeable. This start sequence is
+three bits long, and consists of all ones: 111.
+T o not confuse frame starts with actual data, all left-most occurrences of 11 in the data are replaced with 110.
+This process is called bit-stufﬁng. On the receiving side, this process is reversed, thus replacing 110 by 11.
+Y ou can neglect any padding that would become necessary for all following sub tasks!
+c)* Determine the expected length increase of the actual transmitted data. Note, that the bit-stufﬁng is done
+on the payload!
+Let k ↗ {0, 1}4096 be uniformly random.
+We deﬁne Xi =
+{
+1 si si+1 = 11 for 1 ↘ i ↘ n ↑ 1
+0 else
+The length increase is equal to X = ∑n→1
+i=1 Xi
+Thereby ,E[X ]= E[∑n→1
+i=1 Xi ]= ∑n→1
+i=1 E[Xi ]= ∑n→1
+i=1 P[Xi = 1] = ∑n→1
+i=1
+1
+4 = n→1
+4 = 1023.75
+– Page 12 / 16 –
+
+--- PAGE 73 ---
+Sample Solution
+If you were unable to solve subproblem c), use 1024 bit as the expected length increase.
+d) Using the expected length increase, determine the expected code rate.
+A frame start sequence of 3 bit is added for every octett.
+Additionally , we have to stuff the 11 bit sequences, as determined prior.
+Therefore:
+Expected length: L = 4096 + ≃4096
+8 ⇐· 3 + 1023.75 = 6655.75 bit
+And by that:
+R = 4096
+6655.75 ↔ 0.62
+e)* Argue whether it is realistic to calculate the key by brute-force, rather than extracting it via the side-channel.
+No, brute-forcing 4096 bit is not realistically doable, even given multiple years of time.
+Y ou decide that your current approach is too inefﬁcient.
+f) Propose an approach to reducing the overhead while maintaining the synchronization properties.
+E. g. instead of using the 8b11b coding, we can use a 256b259b coding to synchronize sender and
+receiver. By doing so we reduce the overhead.
+0
+1
+2
+0
+1
+0
+1
+– Page 13 / 16 –
+
+--- PAGE 74 ---
+Sample Solution
+0
+1
+2
+0
+1
+2
+3
+While testing your approach you realize that there is still a 1
+200 chance left that you read a given bit incorrectly.
+Given this, you decide to add redundancy to your coding, extending the 8b11b coding to the 8b11b_v2
+coding. Again, each 8 bit long word of data is translated to 11 bit of channel word. In contrast to before, the
+coding scheme employed, which shall not be explained in detail, allows for synchronization without the use
+of special symbols. Bit-stufﬁng is therefore not longer necessary .
+g) How long is the resulting data sent? Is this coding on average more efﬁcient than the previous approach?
+We have 4096
+8 = 512 data words, which are translated to 512 channel words, each 11 bit long.
+The total (constant) length therefore is Lnew = 4096
+8 · 11 bit = 5632 bit
+Therefore this approach is more efﬁcient than the previous approach ( 5632 bit < 6655.75 bit).This is as
+we no longer require bit-stufﬁng.
+The new coding additionally allows you to detect and correct one ﬂipped bit in each channel word.
+h) What is the probability Pr[incorrect] that the transmission cannot be decoded correctly?
+Note: For this sub task, round to four digits of accuracy . Y ou are allowed to calculate using rounded
+interim results
+Let Xi be the number of ﬂipped bits in channel word i.
+We can recover the word correctly if zero or one bits ﬂip. If two or more bits ﬂip, the transmission is
+decoded incorrectly .
+We continue with the channel words individually:
+Pr[Xi = 0] = (1 ↑ 1
+200 )
+11
+↔ 0.9464
+Pr[Xi = 1] = (1 ↑ 1
+200 )
+10
+· ( 1
+200 )
+1
+·
+(11
+1
+)
+↔ 0.0523
+Therefore Pr[correct] = Pr[ Xi = 0] + Pr[ Xi = 1] ↔ 0.9987
+We cannot decode the data if one or more of the 512 channel words fail in decoding.
+Therefore Pr[incorrect]=1 ↑ (Pr[correct])512 ↔ 1 ↑ 0.5137 = 0.4863
+Note: without interim result rounding, the result is 0.4952!
+– Page 14 / 16 –
+
+--- PAGE 75 ---
+Sample Solution
+Additional space for solutions–clearly mark the (sub)problem your answers are related to and strike
+out invalid solutions.
+– Page 15 / 16 –
+
+--- PAGE 76 ---
+Sample Solution
+– Page 16 / 16 –
+
