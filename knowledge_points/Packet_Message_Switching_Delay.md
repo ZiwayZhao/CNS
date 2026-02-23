@@ -59,18 +59,45 @@ $$ T_{PS} = \frac{1}{r} \left( \lceil \frac{L}{p_{max}} \rceil \cdot L_h + L \ri
 
 ---
 
-### 题型 3：Packet Switching 完整耗时计算大题 (The Pipeline Calculation)
-**Question:** To reach the destination, a 48B message must pass through 3 intermediate Clacks (networks). Distance is $4 \times 12\text{km}$. Packet payload $p = 10\text{B}$, Header $L_h = 2\text{B}$.
-Determine the transmission time if packet switching is used instead of message switching. 
-**Answer:**
-1. 分包数量：$N = \frac{48\text{B}}{10\text{B}} \rightarrow 5$ 个包。
-2. 完整耗时 $T = \text{Source Serialization} + \text{Propagation} + \text{Delay at intermediate nodes}$
-   - 在此题给定的公式解答为：$T = n(L + L_h + n(L + p)) / v_{c0}$ (这通常是一个特定场景的推导题)。但在标准答案给出的带入计算为：**总发送（5个头2B，数据48B）+ 3次中间节点转发延迟（每次转发 1个头2B+数据10B）** = $T = (5 \times 2\text{B} + 48\text{B}) + 3 \times (2\text{B} + 10\text{B})$ （注：这题简化了数据率 $r$ 为 1 的单位换算，重点在于时间叠加）。最终约为 470s。
-📍 **出处 (Source):** *[retake_2022-solution_en.md, Task 4]*
-💡 **中文解析与避坑指南**: 这是考试最容易失分的地方。在计算 Packet Switching 延迟时，请在草稿纸上画一下流水线。
-- 你在**源主机**发送了 5 个包，总长度 $58\text{B}$。
-- 在第一个路由器，它收完第一个 12B 的包后立刻发走，而不需要等后面那 4 个包。
-- 最终的延迟 = **源主机发完所有包的时间 + (1包大小 $\times$ 中间路由器数量 $n$ ) / 发送速率。**
+### 题型 3：Packet Switching 完整耗时计算大题 (The Pipeline Calculation - 原题复刻版)
+
+这道题是整个数据链路层/网络层基础中最容易失分、但也最能拉开差距的压轴大题。以下为你**完全复原**经典的 "The Clacks" 考试原题，并附带最深度的演算逻辑。
+
+**【考试原题重现 (Retake 2022)】**
+> **Background:** The Clacks is a network of towers. A message is transmitted by displaying individual symbols. It takes **5 seconds** to deliver a symbol. Each symbol can be one of $M = 2^8 = 256$ states (8 bits per symbol).
+> **Setup:** The patrician wants to send a 47-character ASCII message (plus 1 NUL terminator). Each character is 8 bits. Thus, the total payload length is $L = 48 \text{ Bytes}$. 
+> **Question i):** *Next, we want to determine the transmission time if packet switching is used instead of message switching. We assume that each packet contains $p = 10\text{B}$ of payload data. An $L_h = 2\text{B}$ header is added to each packet.*
+> *To reach the destination, the message must pass through 5 Clacks (including start and end). Their distance is 12 km each. A packet is read completely before being forwarded.*
+> **Calculate the exact time it takes until the message reaches its destination.**
+
+**【深入骨髓的满分剥析】**
+
+**Step 1: 算出基础的物理速率和时间**
+- 每 5 秒发送 8 个比特 (1 Byte)。所以发送速率 $r = \frac{1 \text{ Byte}}{5 \text{ s}} = 0.2 \text{ B/s}$。
+- 光速传播延迟极小，通常如果没有给出介质信号速度，在这类题中 $Propagation \approx 0$。
+
+**Step 2: 计算分包数量 (Fragmentation)**
+- 报文总量 $L = 48\text{B}$，每个包最大载荷 $p_{max} = 10\text{B}$。
+- 需要分成的包数 $N = \lceil \frac{48}{10} \rceil = 5$ 个包。
+  *(其中 4 个包是满满的 10B 载荷，最后 1 个包只有 8B 载荷。)*
+
+**Step 3: 计算在“源主机”发送所有数据耗时 (Source Serialization)**
+- 就像水管注水一样，源主机必须把所有的包完完整整挤进网线。
+- 总要发送的数据量 = 5 个包的 Header + 整个报文的 Payload = $5 \times 2\text{B} + 48\text{B} = 58\text{B}$。
+- 在源主机的总发送时间 = $\frac{58\text{B}}{0.2\text{B/s}} = \mathbf{290\text{s}}$。
+
+**Step 4: 计算由于“存储转发”导致的中间节点额外延迟**
+- 题目说经过 5 个塔（包括起点和终点）。把起点当 Source，终点当 Destination。中间需要跨过跳板的**中间路由器数量 $n = 5 - 2 = 3$**！
+- 分组交换流水线的精髓在于：前面 4 个包的转发延迟被“管线化”隐藏了。整体耗时的短板，完全取决于**最后一个最大的完整包**在各个中间节点被**接收和再发送一次**的时间。
+- 每次转发都需要重新发送一个完整的峰值大包 (10B 载荷 + 2B 头部 = 12B)。
+- 3 个中间路由器造成的额外流水线迟滞 = $n \times \frac{p_{max} + L_h}{r} = 3 \times \frac{12\text{B}}{0.2\text{B/s}} = 3 \times 60\text{s} = \mathbf{180\text{s}}$。
+
+**Step 5: 汇总总时间**
+- $T_{PS} = \text{源节点总发送时间} + \text{所有中间节点转发单包造成的额外时间}$
+- $T_{PS} = 290\text{s} + 180\text{s} = \mathbf{470\text{s}}$
+
+**✅ 标准答案**: 约 470s。
+*(这道题的标准答案由于版面排版有些乱码，但通过以上的底层逻辑剥析，470s 的来源一清二楚！只要你能在考卷上画出这条 Pipeline 分段计算，此题必定满分！)*
 
 ---
 
